@@ -2,6 +2,8 @@
 
     $aBase = __DIR__;
 
-    echo $aBase;
+    $mP= $aBase."\../models/";
+
+    require_once $mP."auth.php";
 
 ?>

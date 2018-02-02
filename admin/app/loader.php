@@ -9,18 +9,11 @@
 function loader($p) {
 
     global $base;
-    $global["pages"] = getPages();
 
     if(isset($_SESSION["login"])) {
         switch ($p) {
-            case 'anasayfa':
-                require_once "controllers/main.php";
-                break;
-            case 'arabalar':
-                require_once "controllers/cars.php";
-                break;
             default:
-                require_once "controllers/main.php";
+                require_once "controllers/dashboard.php";
         }
     }else{
         require_once "controllers/auth.php";
