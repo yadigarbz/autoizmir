@@ -1,6 +1,6 @@
 <section class="b-homeReviews">
     <div class="container">
-        <h1 class="s-title wow zoomInUp" data-wow-delay="0.3s">WHAT CUSTOMERS SAYING</h1>
+        <h1 class="s-title wow zoomInUp" data-wow-delay="0.3s"> Müşterilerimiz Ne Diyor?</h1>
         <div id="carousel-small-revHome" class="owl-carousel enable-owl-carousel" data-items="2" data-navigation="true" data-auto-play="true" data-stop-on-hover="true" data-items-desktop="2" data-items-desktop-small="2" data-items-tablet="1" data-items-tablet-small="1">
             <div class="b-homeReviews__main wow slideInUp" data-wow-delay="0.3s">
                 <div class="b-homeReviews__main-body m-jaguarRev">

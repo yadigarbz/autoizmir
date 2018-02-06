@@ -1,2 +1,8 @@
 RewriteEngine On
+RewriteRule ^definations/(.*)/delete/(.*) index.php?p=defination&f=$1&param=delete&id=$2
+RewriteRule ^definations/(.*)/(.*) index.php?p=defination&f=$1&param=$2
+RewriteRule ^definations/(.*) index.php?p=defination&f=$1
+RewriteRule ^cars/(.*)/(.*) index.php?p=cars&f=$1&param=$2 [L,NC]
+RewriteRule ^cars/(.*)/ index.php?p=cars&f=$1 [L,NC]
+RewriteRule ^logout index.php?p=logout [L,NC]
 RewriteRule ^(.*).html index.php?p=$1 [L,NC]

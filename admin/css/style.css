@@ -190,3 +190,23 @@
     transition: all 0.3s ease-in-out;
 }
 
+.main-body {
+    display:block;
+    margin:0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position:relative;
+    top: 60px;
+    left: 100px;
+}
+
+.main-body > .main-title {
+    display:block;
+    background-color: #9e9e9e;
+
+}
+
+.main-title > h2{
+    color: #000;
+}

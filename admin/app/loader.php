@@ -10,13 +10,19 @@ function loader($p) {
 
     global $base;
 
-    if(isset($_SESSION["login"])) {
+    if(isUserActive()) {
         switch ($p) {
+            case 'defination':
+                require_once "controllers/definations.php";break;
+            case 'cars':
+                require_once "controllers/cars.php";break;
+            case 'logout':
+                require_once "controllers/auth.php";break;
             default:
-                require_once "controllers/dashboard.php";
+                require_once "controllers/dashboard.php";$p = "home";
         }
     }else{
-        require_once "controllers/auth.php";
+        require_once "controllers/auth.php";$p = "login";
     }
 }
 
