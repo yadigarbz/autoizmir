@@ -694,10 +694,10 @@
                             return myXhr;
                         },
                         success: function (data) {
-                            // your callback here
+                            document.location.href = "";
                         },
-                        error: function (error) {
-                            // handle error
+                        error: function (code, error) {
+                            console.log(error);
                         },
                         async: true,
                         data: formData,
@@ -708,7 +708,7 @@
                     });
                 };
 
-                Upload.prototype.progressHandling = function (event) {
+                /*Upload.prototype.progressHandling = function (event) {
                     var percent = 0;
                     var position = event.loaded || event.position;
                     var total = event.total;
@@ -719,7 +719,7 @@
                     // update progressbars classes so it fits your code
                     $(progress_bar_id + " .progress-bar").css("width", +percent + "%");
                     $(progress_bar_id + " .status").text(percent + "%");
-                };
+                };*/
 
                 var addPhoto = $(".add-photo");
                 var photoInput = $("#new-photo");
@@ -727,12 +727,42 @@
                     photoInput.trigger("click");
                 });
                 photoInput.change(function () {
-                    console.log($(this)[0].files[0]);
-                })
+                    var file = $(this)[0].files[0];
+                    var upload = new Upload(file);
+
+                    upload.doUpload();
+
+                });
+
+                var delMain = $(".del-main");
+                delMain.on("click", function(){
+                    var tarVal = $(this).attr("data-target");
+                    $.ajax("<?php echo $base ?>ajax/delmainphoto/<?php echo $param ?>").done(function (data) {
+                        if(data)
+                            window.location.href = "";
+                    });
+                });
+
+                var doMain = $(".do-main");
+                doMain.on("click", function(){
+                    var tarVal = $(this).attr("data-target");
+                    $.ajax("<?php echo $base ?>ajax/domainphoto/" + tarVal + "/<?php echo $param ?>").done(function (data) {
+                        if(data)
+                            window.location.href = "";
+                    });
+                });
+
+                var delPhoto = $(".del-photo");
+                delPhoto.on("click", function(){
+                    var tarVal = $(this).attr("data-target");
+                    $.ajax("<?php echo $base ?>ajax/delphoto/" + tarVal).done(function (data) {
+                        if(data)
+                            window.location.href = "";
+                    });
+                });
+
             });
         </script>
     <?php } ?>
-    <!--end::Page Snippets -->
     </body>
-<!-- end::Body -->
 </html>

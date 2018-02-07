@@ -342,6 +342,23 @@
 
     }
 
+    function getCarPhotos( $id ){
+
+        global $con;
+        $photos = array();
+        if(!isInjectionWord($id)){
+            $query = "SELECT photo_id as id, photo_path as photo, is_main as main FROM car_photos WHERE car_id = $id";
+            $sql = mysqli_query($con, $query);
+            if($sql){
+                while($data = mysqli_fetch_array($sql)){
+                    $photos[] = $data;
+                }
+            }
+        }
+        return $photos;
+
+    }
+
     function getCarMdlByMfc( $param ){
         global $con;
         $data = array();

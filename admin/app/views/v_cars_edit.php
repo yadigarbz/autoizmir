@@ -565,11 +565,48 @@
                         </div>
                         <div class="tab-pane " id="m_user_profile_tab_2">
                             <div class="m-portlet__body">
-                                <div class="row">
+                                <style>
+                                    .set-photo:hover, .add-photo:hover{
+                                        background-color: rgba(0,0,0,0.2);
+                                        opacity: 1 !important;
+                                        color: #fff;
+                                        transition: all 0.3s ease-in-out;
+                                    }
+                                    .add-photo:hover .top-hover, .set-photo:hover .top-hover{
+                                        opacity: 1 !important;
+                                        color: #fff;
+                                        transition: all 0.3s ease-in-out;
+                                    }
+                                    .top-hover:hover{
+                                        color:#f4da70 !important;
+                                    }
+                                </style>
+                                <div class="col-12 row m--align-center">
+                                <?php
+                                    $i = 0;
+                                    foreach(getCarPhotos($param) as $photo) {
+                                        if($i != 0 && $i%3 == 0){
+                                            echo "</div><div class=\"col-12 row m--align-center\">";
+                                        }
+                                    ?>
+                                        <div class="col-3 m--align-center m--margin-5" style="height:200px; display:inline-block">
+                                            <div class="set-photo col-12" href="#" style="display:table;border:1px solid rgb(230,230,230);width:100%;height:100%;text-decoration: none;color:#9f9f9f;background-size: contain;background-position: center center;background-repeat: no-repeat;background-image: url(<?php echo $base ?>../images/cars/<?php echo $photo["photo"] ?>);">
+                                                <a style="display:table-cell; text-decoration: none" class="col-6 m--valign-middle <?php echo $photo["main"] ? "del-main": "do-main" ?>" data-target="<?php echo $photo["id"] ?>" href="#">
+                                                    <i style="font-size:30px; opacity:0; transition: all 0.3s ease-in-out; <?php echo $photo["main"] ? "color:#00730a;": "" ?>" class="top-hover la <?php echo $photo["main"] ? "la-check": "la-home" ?>"></i>
+                                                </a>
+                                                <a style="display:table-cell; text-decoration: none" class="col-6 m--valign-middle del-photo" href="#" data-target="<?php echo $photo["id"] ?>">
+                                                    <i style="font-size:30px; opacity:0; transition: all 0.3s ease-in-out;" class="top-hover la la-trash"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                <?php $i++;
+                                    } ?>
+                                </div>
+                                <div class="col-12 row m--align-center">
 
-                                    <div class="col-3 m--align-center" style="height:200px; background-color:rgb(230,230,230)">
+                                    <div class="col-3 m--align-center m--margin-5" style="height:200px;">
                                         <input name="new-photo" id="new-photo" type="file" style="display:none" />
-                                        <a class="add-photo" href="#" style="display:table; width:100%; height:100%; text-decoration: none;color:#9f9f9f"><i style="font-size:30px;display:table-cell; vertical-align: middle" class="la la-plus"></i></a>
+                                        <a class="add-photo" href="#" style="display:table; width:100%; height:100%; border:1px solid rgb(230,230,230); text-decoration: none;color:#9f9f9f"><i style="font-size:30px;display:table-cell; vertical-align: middle" class=" top-hover la la-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
