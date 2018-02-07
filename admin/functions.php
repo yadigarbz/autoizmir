@@ -33,6 +33,24 @@ function getUserGrade(){
     }
     return $type;
 }
+function isInjectionWord( $text ){
+
+    $injectionWords = ["unique", "select", "from", "insert", "update"];
+
+    if(is_array($text)) {
+        if (!in_array($injectionWords, $text))
+            return false;
+        else
+            return true;
+    }else{
+        for($i = 0; $i < count($injectionWords); $i++)
+            if (!strpos($injectionWords[$i], $text))
+                return false;
+            else
+                return true;
+    }
+
+}
 
 require_once "./app/loader.php";
 

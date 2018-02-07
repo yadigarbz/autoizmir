@@ -12,6 +12,8 @@ function loader($p) {
 
     if(isUserActive()) {
         switch ($p) {
+            case 'ajax':
+                require_once "ajax/index.php";break;
             case 'defination':
                 require_once "controllers/definations.php";break;
             case 'cars':

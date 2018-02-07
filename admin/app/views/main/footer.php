@@ -1,7 +1,5 @@
             </div>
-    <!-- end:: Body -->
-    <!-- begin::Footer -->
-            <?php if(isset($_SESSION["login"]) && $_SESSION["login"]) { ?>
+            <?php if(isset($_SESSION["login"]) && $_SESSION["login"] && isset($_COOKIE["user"])) { ?>
         <footer class="m-grid__item		m-footer ">
         <div class="m-container m-container--fluid m-container--full-height m-page__container">
             <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
@@ -53,24 +51,19 @@
             </div>
         </div>
     </footer>
-    <!-- end::Footer -->
     </div>
     <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
         <i class="la la-arrow-up"></i>
     </div>
-    <!-- end::Scroll Top -->		    <!-- begin::Quick Nav -->
             <?php } ?>
-    <!-- begin::Quick Nav -->
-    <!--begin::Base Scripts -->
     <script src="<?php echo $base ?>js/base/vendors.bundle.js" type="text/javascript"></script>
     <script src="<?php echo $base ?>js/base/scripts.bundle.js" type="text/javascript"></script>
-    <!--end::Base Scripts -->
-    <!--begin::Page Snippets -->
+
     <?php if($p == "home"){ ?>
     <script src="<?php echo $base ?>js/base/dashboard.js" type="text/javascript"></script>
     <?php } ?>
 
-    <?php if($f == "vehicle_mdls") { ?>
+    <?php if(isset($f) && ($f == "vehicle_mdls" || $f == "vehicle_vrss")) { ?>
         <script>
             $(document).ready(function(){
                 function isAddMdlNameValid(){
@@ -94,6 +87,82 @@
                     else
                         $(".add-submit").prop("disabled", true);
                 });
+
+                var upObject    = $(".update--object");
+                var upSub       = $(".update--sub");
+                var upName      = $(".update--name");
+
+                <?php if($f == "vehicle_mdls") { ?>
+                    upObject.change(function () {
+                    if(upObject.val() > 0){
+                        $.ajax("<?php echo $base ?>ajax/mdltomfc/"+upObject.val(),{
+                            dataType: "json"
+                        }).done(function(data){
+                            upSub.children("option").remove();
+                            upSub.append("<option value='0' selected disabled> Lütfen Bir Marka Seçin </option>");
+                            upSub.attr("disabled", false);
+                            $.each(data, function ( index, data ) {
+                                var _appendObject = "";
+                                if (parseInt(data.mdlid) == parseInt(upObject.val())){
+                                    _appendObject = "<option value='" + data.id + "' selected >" + data.name + "</option>";
+                                }else{
+                                    _appendObject = "<option value='" + data.id + "' >" + data.name + "</option>";
+                                }
+                                upSub.append(_appendObject);
+                            });
+                            var upVal = $(".update--object option:selected").text();
+                            upName.val(upVal.trim());
+                        }).fail(function ( e, m ) {
+                            console.log(m);
+                        }).always(function () {
+                            if(upSub.val() > 0 && upName.val().length > 0){
+                                $(".update-submit").attr("disabled", false);
+                            }else{
+                                $(".update-submit").attr("disabled", true);
+                            }
+                        });
+                    }
+                });
+                <?php } else { ?>
+                    upObject.change(function () {
+                    if(upObject.val() > 0){
+                        $.ajax("<?php echo $base ?>ajax/vrstomdl/"+upObject.val(),{
+                            dataType: "json"
+                        }).done(function(data){
+                            upSub.children("option").remove();
+                            upSub.append("<option value='0' selected disabled> Lütfen Bir Model Seçin </option>");
+                            upSub.attr("disabled", false);
+                            $.each(data, function ( index, data ) {
+                                var _appendObject = "";
+                                if (parseInt(data.vrsid) == parseInt(upObject.val())){
+                                    _appendObject = "<option value='" + data.id + "' selected >" + data.name + "</option>";
+                                }else{
+                                    _appendObject = "<option value='" + data.id + "' >" + data.name + "</option>";
+                                }
+                                upSub.append(_appendObject);
+                            });
+                            var upVal = $(".update--object option:selected").text();
+                            upName.val(upVal.trim());
+                        }).fail(function ( e, m ) {
+                            console.log(m);
+                        }).always(function () {
+                            if(upSub.val() > 0 && upName.val().length > 0){
+                                $(".update-submit").attr("disabled", false);
+                            }else{
+                                $(".update-submit").attr("disabled", true);
+                            }
+                        });
+                    }
+                })
+                <?php } ?>
+                upName.on("keyup", function(){
+                    if(upObject.val() > 0 && upSub.val() > 0 && upName.val().length > 0){
+                        $(".update-submit").attr("disabled", false);
+                    }else{
+                        $(".update-submit").attr("disabled", true);
+                    }
+                })
+
             })
         </script>
     <?php } ?>
@@ -129,6 +198,240 @@
                         $(".update-submit").prop("disabled", true);
                 });
             })
+        </script>
+    <?php } ?>
+
+    <?php if(isset($f) && $f == "car-add") { ?>
+        <script>
+            $(document).ready(function () {
+
+                var title   = $(".car-title");
+                var sub     = $(".car-sub");
+                var price   = $(".car-price");
+                var km      = $(".car-km");
+                var pay     = $(".car-pay");
+                var hire    = $(".car-hire");
+                var credit  = $(".car-credit");
+                var year    = $(".car-year");
+
+                var type    = $(".car-type");
+                var mfc     = $(".car-mfc");
+                var mdl     = $(".car-mdl");
+                var vrs     = $(".car-vrs");
+                var fuel    = $(".car-fuel");
+                var engine  = $(".car-engine");
+                var transmission = $(".car-transmission");
+                var incolor = $(".car-in-color");
+                var outcolor = $(".car-out-color");
+
+                var passenger = $(".car-passenger");
+                var door    = $(".car-door");
+                var citycons = $(".car-city-cons");
+                var outcons = $(".car-out-cons");
+                var sales = $(".car-sales");
+                var description = $(".car-desc");
+
+                var btn     = $(".add-car-submit");
+
+                function isNecessartAreasValid(){
+
+                    var title   = $(".car-title");
+                    var sub     = $(".car-sub");
+                    var price   = $(".car-price");
+                    var km      = $(".car-km");
+                    var pay     = $(".car-pay");
+                    var hire    = $(".car-hire");
+                    var credit  = $(".car-credit");
+                    var year    = $(".car-year");
+
+                    var type    = $(".car-type");
+                    var mfc     = $(".car-mfc");
+                    var mdl     = $(".car-mdl");
+                    var vrs     = $(".car-vrs");
+                    var fuel    = $(".car-fuel");
+                    var engine  = $(".car-engine");
+                    var transmission = $(".car-transmission");
+                    var incolor = $(".car-in-color");
+                    var outcolor = $(".car-out-color");
+
+                    var passenger = $(".car-passenger");
+                    var door    = $(".car-door");
+                    var citycons = $(".car-city-cons");
+                    var outcons = $(".car-out-cons");
+                    var sales = $(".car-sales");
+                    var description = $(".car-desc");
+
+                    if(title.val().length > 0){
+                        if(sub.val().length > 0){
+                            if(price.val().length > 0 && price.val() > 0) {
+                                if (km.val().length > 0 && km.val() > 0) {
+                                    if(hire.val().length > 0 && hire.val() > 0){
+                                        if(year.val().length > 0 && year.val() > 1900 && year.val() < 2040) {
+
+                                            if (type.val() > 0) {
+                                                if (mfc.val() > 0) {
+                                                    if (mdl.val() > 0) {
+                                                        if (vrs.val() > 0) {
+                                                            if (fuel.val() > 0) {
+                                                                if (engine.val() > 0) {
+                                                                    if (transmission.val() > 0) {
+                                                                        if (incolor.val() > 0) {
+                                                                            if (outcolor.val() > 0) {
+
+                                                                                if (sales.val() > 0) {
+
+                                                                                    return true;
+
+                                                                                } else return false;
+
+                                                                            } else return false;
+                                                                        } else return false;
+                                                                    } else return false;
+                                                                } else return false;
+                                                            } else return false;
+                                                        } else return false;
+                                                    } else return false;
+                                                } else return false;
+                                            } else return false;
+
+                                        }else return false
+                                    }else return false;
+                                }else return false;
+                            }else return false;
+                        }else return false;
+                    }else return false;
+
+                }
+
+                title.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                sub.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                price.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                km.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                hire.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                year.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                type.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                mfc.on("change", function () {
+
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+
+                    if(mfc.val() > 0){
+                        $.ajax("<?php echo $base ?>ajax/mfctomdl/"+mfc.val(),{
+                            dataType:"json"
+                        }).done(function (data) {
+                            mdl.children("option").remove();
+                            mdl.append("<option value='0' selected disabled> Lütfen Model Seçin ( Zorunlu ) </option>");
+                            mdl.attr("disabled", false);
+                            $.each(data, function ( index, data) {
+                                mdl.append("<option value='"+ data.id +"'>" + data.name + "</option>");
+                            });
+                        });
+                    }
+
+                });
+                mdl.on("change", function () {
+
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+
+                    if(mdl.val() > 0){
+                        $.ajax("<?php echo $base ?>ajax/mdltovrs/"+mdl.val(),{
+                            dataType:"json"
+                        }).done(function (data) {
+                            vrs.children("option").remove();
+                            vrs.append("<option value='0' selected disabled> Lütfen Versiyon Seçin ( Zorunlu ) </option>");
+                            vrs.attr("disabled", false);
+                            $.each(data, function ( index, data) {
+                                vrs.append("<option value='"+ data.id +"'>" + data.name + "</option>");
+                            });
+                        });
+                    }
+
+                });
+                vrs.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                fuel.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                engine.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                transmission.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                incolor.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                })
+                outcolor.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                sales.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+
+
+            });
         </script>
     <?php } ?>
     <!--end::Page Snippets -->

@@ -9,6 +9,16 @@
                     carMfcAdd( $_POST );break;
                 case 'vehicle_mdls':
                     carMdlAdd( $_POST );break;
+                case 'vehicle_vrss':
+                    carVrsAdd( $_POST );break;
+                case 'fuel_types':
+                    paramResAdd( $_POST, $f );break;
+                case 'engine_types':
+                    paramResAdd( $_POST, $f );break;
+                case 'tsms_types':
+                    paramResAdd( $_POST, $f );break;
+                case 'colors':
+                    paramResAdd( $_POST, $f );break;
             }
         }
     }else if(isset($param) && $param == "update"){
@@ -20,6 +30,16 @@
                     carMfcUpdate( $_POST );break;
                 case 'vehicle_mdls':
                     carMdlUpdate( $_POST);break;
+                case 'vehicle_vrss':
+                    carVrsUpdate( $_POST );break;
+                case 'fuel_types':
+                    paramResUpdate( $_POST, $f );break;
+                case 'engine_types':
+                    paramResUpdate( $_POST, $f );break;
+                case 'tsms_types':
+                    paramResUpdate( $_POST, $f );break;
+                case 'colors':
+                    paramResUpdate( $_POST, $f );break;
             }
         }
     }else if(isset($param) && $param == "delete"){
@@ -31,6 +51,16 @@
                     carMfcDelete( $_GET );break;
                 case 'vehicle_mdls':
                     carMdlDelete( $_GET );break;
+                case 'vehicle_vrss':
+                    carVrsDelete( $_GET );break;
+                case 'fuel_types':
+                    paramResDelete( $_GET, $f );break;
+                case 'engine_types':
+                    paramResDelete( $_GET, $f );break;
+                case 'tsms_types':
+                    paramResDelete( $_GET, $f );break;
+                case 'colors':
+                    paramResDelete( $_GET, $f );break;
             }
         }
     }
@@ -84,21 +114,36 @@
                 </div>
             </div>
             <div class="m-portlet__body">
-                <?php if($f == "vehicle_mdls") { ?>
+                <?php if($f == "vehicle_vrss" || ($f == "vehicle_mdls")) { ?>
                     <form class="m-form m-form--fit m-form--label-align-center" method="post" action="add">
                         <div class="m-portlet__body">
                             <div class="form-group m-form__group row">
                                 <div class="col-6">
                                     <label>
-                                        Marka Seçin
+                                        <?php echo $f == "vehicle_mdls" ? "Marka Seçin" : "Model Seçin" ; ?>
                                     </label>
                                     <select class="form-control m-input update-object add-mdl-mfc" name="mfcid">
-                                        <option value="0" selected disabled> Lütfen marka seçin </option>
-                                        <?php foreach(getCarMfcs() as $row) { ?>
+                                        <?php
+                                            if($f == "vehicle_mdls") { ?>
+                                            <option value="0" selected disabled> Lütfen marka seçin </option>
+                                                <?php foreach (getCarMfcs() as $row) { ?>
+
                                             <option value="<?php echo $row["id"] ?>">
                                                 <?php echo $row["name"] ?>
                                             </option>
-                                        <?php } ?>
+
+                                        <?php   }
+                                            } elseif($f == "vehicle_vrss") { ?>
+                                            <option value="0" selected disabled> Lütfen model seçin </option>
+                                                <?php foreach(getCarMdls() as $row){ ?>
+
+                                            <option value="<?php echo $row["id"] ?>">
+                                                <?php echo $row["name"] ?>
+                                            </option>
+
+                                        <?php   }
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-6">
@@ -170,7 +215,7 @@
                 </div>
             </div>
             <div class="m-portlet__body">
-                <?php if($f == "vehicle_mdls") { ?>
+                <?php if($f == "vehicle_vrss" || $f == "vehicle_mdls") { ?>
                     <form class="m-form m-form--fit m-form--label-align-center" action="update" method="post">
                         <input type="hidden" name="function" value="update">
                         <div class="m-portlet__body">
@@ -179,7 +224,7 @@
                                     <label>
                                         Tanımlama Seçin
                                     </label>
-                                    <select class="form-control m-input update-object" name="id">
+                                    <select class="form-control m-input update--object" name="id">
                                         <option value="0" selected disabled> Lütfen değiştirmek isteiğiniz tanımlamayı seçin </option>
                                         <?php foreach($data as $row) { ?>
                                             <option value="<?php echo $row["id"] ?>">
@@ -190,9 +235,9 @@
                                 </div>
                                 <div class="col-4">
                                     <label>
-                                        Marka Seçin
+                                        <?php echo $f == "vehicle_mdls" ? "Marka Seçin" : "Model Seçin" ; ?>
                                     </label>
-                                    <select class="form-control m-input update-object" name="id" disabled>
+                                    <select class="form-control m-input update--sub" name="mfcid" disabled>
                                         <option value="0" selected disabled> Lütfen önce model seçin </option>
                                     </select>
                                 </div>
@@ -200,7 +245,7 @@
                                     <label>
                                         Tanımlama Adı
                                     </label>
-                                    <input class="form-control m-input update-name" type="text" name="value" placeholder="Yeni tanım adı girin" >
+                                    <input class="form-control m-input update--name" type="text" name="value" placeholder="Yeni tanım adı girin" >
                                 </div>
                             </div>
                         </div>
@@ -212,9 +257,6 @@
                                         <button type="submit" class="btn btn-success update-submit" disabled="true">
                                             Güncelle
                                         </button>
-                                        <script>
-
-                                        </script>
                                     </div>
                                 </div>
                             </div>
