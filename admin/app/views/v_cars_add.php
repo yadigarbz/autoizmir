@@ -1,3 +1,11 @@
+<?php if(isset($param) && $param == "add") {
+        if(isset($_POST["function"]) && $_POST["function"] == "add"){
+            echo "burda";
+            addCar( $_POST );
+        }else{
+            echo "velet";
+        }
+    } else { ?>
 <div class="m-grid__item m-grid__item--fluid m-wrapper">
     <div class="m-subheader ">
         <div class="d-flex align-items-center">
@@ -24,7 +32,8 @@
             </div>
             <div class="tab-content">
             <div class="tab-pane active" id="m_user_profile_tab_1">
-                <form class="m-form m-form--fit m-form--label-align-right">
+                <form class="m-form m-form--fit m-form--label-align-right" method="post" action="car-add/add">
+                    <input type="hidden" name="function" value="add" />
                     <div class="m-portlet__body">
                         <div class="form-group m-form__group row">
                             <div class="col-10">
@@ -40,13 +49,13 @@
                                 <label for="example-text-input">
                                     İlan Başlığı
                                 </label>
-                                <input class="form-control m-input car-title" name="car-title" maxlength="120" type="text" placeholder="İlan başlığı girin (Zorunlu Alan)">
+                                <input class="form-control m-input car-title" name="title" maxlength="120" type="text" placeholder="İlan başlığı girin (Zorunlu Alan)">
                             </div>
                             <div class="col-6">
                                 <label for="example-text-input">
                                     İlan Kısa Metin
                                 </label>
-                                <input class="form-control m-input car-sub" name="car-sub" maxlength="150" type="text" placeholder="İlan kısa metni girin (Zorunlu Alan)">
+                                <input class="form-control m-input car-sub" name="sub" maxlength="150" type="text" placeholder="İlan kısa metni girin (Zorunlu Alan)">
                             </div>
                         </div>
                         <!-- Price / KM -->
@@ -347,3 +356,4 @@
         </div>
     </div>
 </div>
+<?php } ?>

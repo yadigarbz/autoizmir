@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 03 Şub 2018, 06:45:52
--- Sunucu sürümü: 10.1.29-MariaDB
--- PHP Sürümü: 7.2.0
+-- Üretim Zamanı: 07 Şub 2018, 12:37:27
+-- Sunucu sürümü: 10.1.30-MariaDB
+-- PHP Sürümü: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -59,11 +59,12 @@ CREATE TABLE `cars` (
   `c_creadit` bit(1) DEFAULT b'0',
   `hire_p` int(11) DEFAULT NULL,
   `a_payment` int(11) DEFAULT NULL,
+  `car_kilometer` int(11) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
   `typ_id` int(11) DEFAULT NULL,
   `mfc_id` int(11) DEFAULT NULL,
   `mdl_id` int(11) DEFAULT NULL,
   `vrs_id` int(11) DEFAULT NULL,
-  `car_kilometer` int(11) DEFAULT NULL,
   `etyp_id` int(11) DEFAULT NULL,
   `ttyp_id` int(11) DEFAULT NULL,
   `out_c` int(11) DEFAULT NULL,
@@ -76,6 +77,14 @@ CREATE TABLE `cars` (
   `description` text COLLATE utf8_turkish_ci,
   `sales` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `cars`
+--
+
+INSERT INTO `cars` (`car_id`, `car_title`, `car_subtitle`, `sta_id`, `price`, `c_creadit`, `hire_p`, `a_payment`, `car_kilometer`, `year`, `typ_id`, `mfc_id`, `mdl_id`, `vrs_id`, `etyp_id`, `ttyp_id`, `out_c`, `inside_c`, `passenger`, `doors`, `ftyp_id`, `city_cons`, `out_cons`, `description`, `sales`) VALUES
+(1, 'aıg', 'kedg', 1, 2345, b'1', 456, 456, 235, 1920, 1, 3, 3, 2, 2, 1, 1, 1, 0, 0, 2, 0, 0, '', 1),
+(3, 'Deneme', 'kedg', 1, 2345, b'1', 456, 456, 235, 1920, 2, 3, 3, 2, 2, 1, 1, 1, 0, 0, 2, 0, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -100,6 +109,14 @@ CREATE TABLE `car_manifacturers` (
   `mfc_seo` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `car_manifacturers`
+--
+
+INSERT INTO `car_manifacturers` (`mfc_id`, `mfc_name`, `mfc_seo`) VALUES
+(2, 'Aston Martin', 'AstonMartin'),
+(3, 'Ford', 'Ford');
+
 -- --------------------------------------------------------
 
 --
@@ -112,6 +129,14 @@ CREATE TABLE `car_models` (
   `mdl_name` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL,
   `mdl_seo` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `car_models`
+--
+
+INSERT INTO `car_models` (`mdl_id`, `mfc_id`, `mdl_name`, `mdl_seo`) VALUES
+(1, 2, 'DB 11', 'Deneme'),
+(3, 3, 'Fiesta', 'Fiesta');
 
 -- --------------------------------------------------------
 
@@ -150,6 +175,18 @@ CREATE TABLE `car_types` (
   `typ_seo` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `car_types`
+--
+
+INSERT INTO `car_types` (`typ_id`, `typ_name`, `typ_seo`) VALUES
+(1, '4 ÇEKER', '4ceker'),
+(2, 'Açık Kasa - Ticari', 'acikkasa'),
+(3, 'Tek Kapı - Spor', 'sport'),
+(4, 'Üstü Açık', 'ustuacik'),
+(5, 'Sedan', 'sedan'),
+(6, 'Hatchback - Mini', 'HatchbackMini');
+
 -- --------------------------------------------------------
 
 --
@@ -175,6 +212,13 @@ CREATE TABLE `car_versions` (
   `vrs_seo` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `car_versions`
+--
+
+INSERT INTO `car_versions` (`vrs_id`, `mdl_id`, `vrs_name`, `vrs_seo`) VALUES
+(2, 3, '620 HP', '620HP');
+
 -- --------------------------------------------------------
 
 --
@@ -185,6 +229,13 @@ CREATE TABLE `colors` (
   `clr_id` int(11) NOT NULL,
   `clr_name` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `colors`
+--
+
+INSERT INTO `colors` (`clr_id`, `clr_name`) VALUES
+(1, 'Haki Yeşil');
 
 -- --------------------------------------------------------
 
@@ -197,6 +248,13 @@ CREATE TABLE `engine_types` (
   `etyp_name` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `engine_types`
+--
+
+INSERT INTO `engine_types` (`etyp_id`, `etyp_name`) VALUES
+(2, 'V8 5.0L VCL');
+
 -- --------------------------------------------------------
 
 --
@@ -207,6 +265,13 @@ CREATE TABLE `fuel_types` (
   `ftyp_id` int(11) NOT NULL,
   `ftyp_name` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `fuel_types`
+--
+
+INSERT INTO `fuel_types` (`ftyp_id`, `ftyp_name`) VALUES
+(2, 'Benzin');
 
 -- --------------------------------------------------------
 
@@ -245,6 +310,13 @@ CREATE TABLE `sales_managers` (
   `smn_mail` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `sales_managers`
+--
+
+INSERT INTO `sales_managers` (`smn_id`, `smn_name`, `smn_phone`, `smn_mail`) VALUES
+(1, 'Yadigar ZENGİN', '5304605205', 'yadigarbz@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -255,6 +327,13 @@ CREATE TABLE `transmission_types` (
   `ttyp_id` int(11) NOT NULL,
   `ttyp_name` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `transmission_types`
+--
+
+INSERT INTO `transmission_types` (`ttyp_id`, `ttyp_name`) VALUES
+(1, 'Sıralı Şanzıman ( Manuel ) - 5 Vites');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -370,7 +449,7 @@ ALTER TABLE `admin_users`
 -- Tablo için AUTO_INCREMENT değeri `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `car_features`
@@ -382,13 +461,13 @@ ALTER TABLE `car_features`
 -- Tablo için AUTO_INCREMENT değeri `car_manifacturers`
 --
 ALTER TABLE `car_manifacturers`
-  MODIFY `mfc_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mfc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `car_models`
 --
 ALTER TABLE `car_models`
-  MODIFY `mdl_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mdl_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `car_photos`
@@ -406,7 +485,7 @@ ALTER TABLE `car_take_features`
 -- Tablo için AUTO_INCREMENT değeri `car_types`
 --
 ALTER TABLE `car_types`
-  MODIFY `typ_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `typ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `car_usage_stas`
@@ -418,25 +497,25 @@ ALTER TABLE `car_usage_stas`
 -- Tablo için AUTO_INCREMENT değeri `car_versions`
 --
 ALTER TABLE `car_versions`
-  MODIFY `vrs_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `vrs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `colors`
 --
 ALTER TABLE `colors`
-  MODIFY `clr_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `clr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `engine_types`
 --
 ALTER TABLE `engine_types`
-  MODIFY `etyp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `etyp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `fuel_types`
 --
 ALTER TABLE `fuel_types`
-  MODIFY `ftyp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ftyp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `pages`
@@ -448,13 +527,13 @@ ALTER TABLE `pages`
 -- Tablo için AUTO_INCREMENT değeri `sales_managers`
 --
 ALTER TABLE `sales_managers`
-  MODIFY `smn_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `smn_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `transmission_types`
 --
 ALTER TABLE `transmission_types`
-  MODIFY `ttyp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ttyp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

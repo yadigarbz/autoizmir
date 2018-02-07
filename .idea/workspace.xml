@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4ac8ab1-d026-4017-9902-30792f68a646" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/app/ajax/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/app/views/v_cars_add.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin/app/views/v_cars_edit.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/19def40b-29b1-4582-aeea-10bcedb69c3b.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/19def40b-29b1-4582-aeea-10bcedb69c3b.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/.htaccess" afterPath="$PROJECT_DIR$/admin/.htaccess" />
-      <change beforePath="$PROJECT_DIR$/admin/app/loader.php" afterPath="$PROJECT_DIR$/admin/app/loader.php" />
+      <change beforePath="$PROJECT_DIR$/admin/app/helpers/definationtable.php" afterPath="$PROJECT_DIR$/admin/app/helpers/definationtable.php" />
       <change beforePath="$PROJECT_DIR$/admin/app/models/cars.php" afterPath="$PROJECT_DIR$/admin/app/models/cars.php" />
-      <change beforePath="$PROJECT_DIR$/admin/app/models/definations.php" afterPath="$PROJECT_DIR$/admin/app/models/definations.php" />
       <change beforePath="$PROJECT_DIR$/admin/app/views/main/footer.php" afterPath="$PROJECT_DIR$/admin/app/views/main/footer.php" />
-      <change beforePath="$PROJECT_DIR$/admin/app/views/main/header.php" afterPath="$PROJECT_DIR$/admin/app/views/main/header.php" />
-      <change beforePath="$PROJECT_DIR$/admin/app/views/main/leftbar.php" afterPath="$PROJECT_DIR$/admin/app/views/main/leftbar.php" />
-      <change beforePath="$PROJECT_DIR$/admin/app/views/v_defination_list.php" afterPath="$PROJECT_DIR$/admin/app/views/v_defination_list.php" />
-      <change beforePath="$PROJECT_DIR$/admin/css/normalize.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/css/style.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/functions.php" afterPath="$PROJECT_DIR$/admin/functions.php" />
+      <change beforePath="$PROJECT_DIR$/admin/app/views/v_cars_add.php" afterPath="$PROJECT_DIR$/admin/app/views/v_cars_add.php" />
+      <change beforePath="$PROJECT_DIR$/admin/app/views/v_cars_list.php" afterPath="$PROJECT_DIR$/admin/app/views/v_cars_list.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,51 +48,72 @@
         <item name="autoizmir@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="autoizmir: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="cars: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="sales_managers: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="v_cars_add.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_add.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="333" column="111" lean-forward="false" selection-start-line="333" selection-start-column="111" selection-end-line="333" selection-end-column="111" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#11;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#13;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#14;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#15;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#16;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#textarea#0;n#div#1;n#div#16;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="cars.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/app/models/cars.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="106" column="23" lean-forward="true" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+            <state relative-caret-position="402">
+              <caret line="199" column="55" lean-forward="false" selection-start-line="199" selection-start-column="55" selection-end-line="199" selection-end-column="55" />
               <folding>
                 <element signature="n#getCarTypes#0;n#!!top" expanded="false" />
                 <element signature="n#getCarMfcs#0;n#!!top" expanded="false" />
                 <element signature="n#getCarMdls#0;n#!!top" expanded="false" />
                 <element signature="n#getCarVrs#0;n#!!top" expanded="false" />
-                <element signature="n#getParamRes#0;n#!!top" expanded="false" />
+                <element signature="n#getCarMFC#0;n#!!top" expanded="false" />
+                <element signature="n#getActiveCars#0;n#!!top" expanded="false" />
+                <element signature="n#getActiveCarsList#0;n#!!top" expanded="false" />
+                <element signature="n#getCar#0;n#!!top" expanded="false" />
+                <element signature="n#addCar#0;n#!!top" expanded="false" />
+                <element signature="n#getCarMdlByMfc#0;n#!!top" expanded="false" />
+                <element signature="n#getCarVrsByMdl#0;n#!!top" expanded="false" />
+                <marker date="1518002433838" expanded="true" signature="2629:2680" ph="SELECT ${$co... ${$table}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v_cars_edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="570" column="77" lean-forward="false" selection-start-line="570" selection-start-column="77" selection-end-line="570" selection-end-column="77" />
+              <folding>
+                <element signature="e#367#626#0#HTML" expanded="false" />
+                <element signature="e#898#1021#0#HTML" expanded="false" />
+                <element signature="e#1050#1327#0#HTML" expanded="false" />
+                <element signature="e#1356#1758#0#HTML" expanded="false" />
+                <element signature="e#1814#6158#0#HTML" expanded="false" />
+                <element signature="e#1983#2203#0#HTML" expanded="false" />
+                <element signature="e#2232#3505#0#HTML" expanded="false" />
+                <element signature="e#2359#2378#0#HTML" expanded="true" />
+                <element signature="e#3534#4037#0#HTML" expanded="false" />
+                <element signature="e#3661#3680#0#HTML" expanded="true" />
+                <element signature="e#4066#4570#0#HTML" expanded="false" />
+                <element signature="e#4193#4212#0#HTML" expanded="true" />
+                <element signature="e#4599#5103#0#HTML" expanded="false" />
+                <element signature="e#4726#4745#0#HTML" expanded="true" />
+                <element signature="e#5132#5634#0#HTML" expanded="false" />
+                <element signature="e#5259#5278#0#HTML" expanded="true" />
+                <element signature="e#5663#6128#0#HTML" expanded="false" />
+                <element signature="e#5790#5809#0#HTML" expanded="true" />
+                <element signature="e#6253#9250#0#HTML" expanded="false" />
+                <element signature="e#6328#7274#0#HTML" expanded="false" />
+                <element signature="e#7303#8242#0#HTML" expanded="false" />
+                <element signature="e#8271#9219#0#HTML" expanded="false" />
+                <element signature="e#9560#10763#0#HTML" expanded="false" />
+                <element signature="e#10432#10729#0#HTML" expanded="false" />
+                <element signature="e#10976#38563#0#HTML" expanded="false" />
+                <element signature="e#37760#38527#0#HTML" expanded="false" />
+                <element signature="e#38849#38904#0#HTML" expanded="true" />
+                <element signature="e#38997#39017#0#HTML" expanded="true" />
+                <element signature="e#39091#39174#0#HTML" expanded="true" />
+                <element signature="e#39178#39243#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,46 +122,57 @@
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/app/views/main/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="413" column="41" lean-forward="false" selection-start-line="413" selection-start-column="41" selection-end-line="413" selection-end-column="41" />
+            <state relative-caret-position="294">
+              <caret line="686" column="86" lean-forward="false" selection-start-line="686" selection-start-column="86" selection-end-line="686" selection-end-column="86" />
               <folding>
-                <element signature="n#div#0;n#footer#0;n#!!top" expanded="false" />
                 <element signature="e#3461#8789#0#PHP" expanded="false" />
                 <element signature="e#8812#10080#0#PHP" expanded="false" />
-                <element signature="e#15190#15385#0#HTML" expanded="false" />
-                <element signature="e#15432#15627#0#HTML" expanded="false" />
-                <element signature="e#15676#15871#0#HTML" expanded="false" />
-                <element signature="e#15917#16112#0#HTML" expanded="false" />
-                <element signature="e#16160#16355#0#HTML" expanded="false" />
-                <element signature="e#16403#16598#0#HTML" expanded="false" />
-                <element signature="e#16647#16842#0#HTML" expanded="false" />
-                <element signature="e#16890#17792#0#HTML" expanded="false" />
-                <element signature="e#17107#17773#0#HTML" expanded="false" />
-                <element signature="e#17840#18745#0#HTML" expanded="false" />
-                <element signature="e#18793#18988#0#HTML" expanded="false" />
-                <element signature="e#19037#19232#0#HTML" expanded="false" />
-                <element signature="e#19283#19478#0#HTML" expanded="false" />
-                <element signature="e#19535#19730#0#HTML" expanded="false" />
-                <element signature="e#19782#19977#0#HTML" expanded="false" />
-                <element signature="e#20029#20224#0#HTML" expanded="false" />
-                <element signature="e#20274#20469#0#HTML" expanded="false" />
+                <element signature="e#10095#20519#0#PHP" expanded="false" />
+                <element signature="e#21839#25582#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/ajax/index.php">
+      <file leaf-file-name="v_cars_add.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="94" column="50" lean-forward="false" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+            <state relative-caret-position="34">
+              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/metronic_v5.1/metronic_v5.1/default/dist/default/header/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="3537" column="26" lean-forward="true" selection-start-line="3534" selection-start-column="32" selection-end-line="3537" selection-end-column="26" />
               <folding>
-                <element signature="n#getCarMfcByModel#0;n#!!top" expanded="false" />
-                <element signature="n#getCarMdlByVersion#0;n#!!top" expanded="false" />
-                <element signature="n#getCarMdlByMfc#0;n#!!top" expanded="false" />
-                <element signature="n#getCarVrsByMdl#0;n#!!top" expanded="false" />
-                <marker date="1517969975494" expanded="true" signature="1767:1838" ph="SELECT vrs_i... car_versions" />
+                <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cars" pinned="false" current-in-tab="false">
+        <entry file="das://table:/d151b53e/19def40b-29b1-4582-aeea-10bcedb69c3b/autoizmir.cars">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -189,7 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/main.php" />
         <option value="$PROJECT_DIR$/app/config/db.php" />
         <option value="$PROJECT_DIR$/function.php" />
         <option value="$PROJECT_DIR$/app/views/main/bottombar.php" />
@@ -222,12 +247,10 @@
         <option value="$PROJECT_DIR$/app/views/v_customerscomment.php" />
         <option value="$USER_HOME$/Desktop/metronic_v5.1/metronic_v5.1/default/dist/demo6/index.html" />
         <option value="$PROJECT_DIR$/admin/app/views/v_login.php" />
-        <option value="$PROJECT_DIR$/admin/app/views/v_cars_list.php" />
         <option value="$PROJECT_DIR$/admin/app/controllers/definations.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/19def40b-29b1-4582-aeea-10bcedb69c3b/console.sql" />
         <option value="$PROJECT_DIR$/admin/app/models/auth.php" />
         <option value="$PROJECT_DIR$/admin/app/views/main/topbar.php" />
-        <option value="$PROJECT_DIR$/admin/app/helpers/definationtable.php" />
         <option value="$PROJECT_DIR$/admin/app/loader.php" />
         <option value="$PROJECT_DIR$/admin/functions.php" />
         <option value="$PROJECT_DIR$/admin/app/views/v_defination_list.php" />
@@ -235,10 +258,13 @@
         <option value="$USER_HOME$/Desktop/metronic_v5.1/metronic_v5.1/default/dist/default/header/profile.html" />
         <option value="$PROJECT_DIR$/admin/app/views/main/header.php" />
         <option value="$PROJECT_DIR$/admin/app/models/definations.php" />
-        <option value="$PROJECT_DIR$/admin/app/models/cars.php" />
         <option value="$PROJECT_DIR$/admin/app/views/main/leftbar.php" />
-        <option value="$PROJECT_DIR$/admin/app/views/v_cars_add.php" />
         <option value="$PROJECT_DIR$/admin/app/ajax/index.php" />
+        <option value="$PROJECT_DIR$/admin/app/views/v_cars_add.php" />
+        <option value="$PROJECT_DIR$/admin/app/helpers/definationtable.php" />
+        <option value="$PROJECT_DIR$/admin/app/views/v_cars_list.php" />
+        <option value="$PROJECT_DIR$/admin/app/models/cars.php" />
+        <option value="$PROJECT_DIR$/admin/app/views/v_cars_edit.php" />
         <option value="$PROJECT_DIR$/admin/app/views/main/footer.php" />
       </list>
     </option>
@@ -273,6 +299,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,6 +330,13 @@
               <item name="autoizmir" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="helpers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="autoizmir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autoizmir" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -324,7 +358,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -335,18 +368,18 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\autoizmir\admin\js\base" />
-      <recent name="C:\xampp\htdocs\autoizmir\admin\js" />
-      <recent name="C:\xampp\htdocs\autoizmir\admin\images" />
-      <recent name="C:\xampp\htdocs\autoizmir\admin\app\js" />
-      <recent name="C:\xampp\htdocs\autoizmir\app\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\autoizmir\admin\app\views" />
       <recent name="C:\xampp\htdocs\autoizmir\admin\css" />
       <recent name="C:\xampp\htdocs\autoizmir\admin\app\config" />
       <recent name="C:\xampp\htdocs\autoizmir\app\views\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\autoizmir\admin\app\views" />
+      <recent name="C:\xampp\htdocs\autoizmir\admin\js\base" />
+      <recent name="C:\xampp\htdocs\autoizmir\admin\js" />
+      <recent name="C:\xampp\htdocs\autoizmir\admin\images" />
+      <recent name="C:\xampp\htdocs\autoizmir\admin\app\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -379,6 +412,7 @@
       <workItem from="1517735868885" duration="12261000" />
       <workItem from="1517866215400" duration="4100000" />
       <workItem from="1517947134709" duration="22952000" />
+      <workItem from="1517993500960" duration="9907000" />
     </task>
     <task id="LOCAL-00001" summary="Inıtal">
       <created>1517564809749</created>
@@ -391,16 +425,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92823000" />
+    <option name="totallyTimeSpent" value="102730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16251831" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14055637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -450,32 +485,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/v_carsearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/v_c_minibanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="60" lean-forward="false" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/v_c_carlist_filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="82" column="17" lean-forward="false" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/cars.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -541,13 +555,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/css/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="446" column="1" lean-forward="false" selection-start-line="446" selection-start-column="1" selection-end-line="446" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/css/normalize.css" />
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -579,14 +587,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="204" column="18" lean-forward="false" selection-start-line="204" selection-start-column="18" selection-end-line="204" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/css/style.css" />
     <entry file="file://$PROJECT_DIR$/admin/js/base/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="195" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/controllers/definations.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -709,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/helpers/definationtable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -732,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,9 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="103" lean-forward="false" selection-start-line="0" selection-start-column="103" selection-end-line="0" selection-end-column="103" />
-          <folding>
-            <element signature="n#header#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,25 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="115" column="28" lean-forward="false" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/metronic_v5.1/metronic_v5.1/default/dist/default/header/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="3133" column="26" lean-forward="true" selection-start-line="3063" selection-start-column="20" selection-end-line="3133" selection-end-column="26" />
-          <folding>
-            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,14 +755,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d151b53e/19def40b-29b1-4582-aeea-10bcedb69c3b/autoizmir.sales_managers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/models/definations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="427" column="4" lean-forward="false" selection-start-line="427" selection-start-column="4" selection-end-line="455" selection-end-column="5" />
+        <state relative-caret-position="181">
+          <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="n#getSeoOfName#0;n#!!top" expanded="false" />
             <element signature="n#getCarTypes#0;n#!!top" expanded="false" />
@@ -833,84 +802,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_add.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/helpers/definationtable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="333" column="111" lean-forward="false" selection-start-line="333" selection-start-column="111" selection-end-line="333" selection-end-column="111" />
+        <state relative-caret-position="272">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="162" column="41" lean-forward="true" selection-start-line="162" selection-start-column="41" selection-end-line="162" selection-end-column="41" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#13;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#14;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#15;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#16;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#16;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#6855#10117#0#HTML" expanded="false" />
+            <marker date="1517999124401" expanded="false" signature="6966:8334" ph="..." />
+            <marker date="1517999124401" expanded="true" signature="11143:11189" ph="..." />
+            <marker date="1517999124401" expanded="true" signature="11249:11348" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d151b53e/19def40b-29b1-4582-aeea-10bcedb69c3b/autoizmir.cars">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/metronic_v5.1/metronic_v5.1/default/dist/default/header/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="3537" column="26" lean-forward="true" selection-start-line="3534" selection-start-column="32" selection-end-line="3537" selection-end-column="26" />
+          <folding>
+            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/ajax/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="94" column="50" lean-forward="false" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+        <state relative-caret-position="136">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="n#getCarMfcByModel#0;n#!!top" expanded="false" />
             <element signature="n#getCarMdlByVersion#0;n#!!top" expanded="false" />
             <element signature="n#getCarMdlByMfc#0;n#!!top" expanded="false" />
             <element signature="n#getCarVrsByMdl#0;n#!!top" expanded="false" />
-            <marker date="1517969975494" expanded="true" signature="1767:1838" ph="SELECT vrs_i... car_versions" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/models/cars.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="106" column="23" lean-forward="true" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+        <state relative-caret-position="402">
+          <caret line="199" column="55" lean-forward="false" selection-start-line="199" selection-start-column="55" selection-end-line="199" selection-end-column="55" />
           <folding>
             <element signature="n#getCarTypes#0;n#!!top" expanded="false" />
             <element signature="n#getCarMfcs#0;n#!!top" expanded="false" />
             <element signature="n#getCarMdls#0;n#!!top" expanded="false" />
             <element signature="n#getCarVrs#0;n#!!top" expanded="false" />
-            <element signature="n#getParamRes#0;n#!!top" expanded="false" />
+            <element signature="n#getCarMFC#0;n#!!top" expanded="false" />
+            <element signature="n#getActiveCars#0;n#!!top" expanded="false" />
+            <element signature="n#getActiveCarsList#0;n#!!top" expanded="false" />
+            <element signature="n#getCar#0;n#!!top" expanded="false" />
+            <element signature="n#addCar#0;n#!!top" expanded="false" />
+            <element signature="n#getCarMdlByMfc#0;n#!!top" expanded="false" />
+            <element signature="n#getCarVrsByMdl#0;n#!!top" expanded="false" />
+            <marker date="1518002433838" expanded="true" signature="2629:2680" ph="SELECT ${$co... ${$table}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/views/v_cars_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="570" column="77" lean-forward="false" selection-start-line="570" selection-start-column="77" selection-end-line="570" selection-end-column="77" />
+          <folding>
+            <element signature="e#367#626#0#HTML" expanded="false" />
+            <element signature="e#898#1021#0#HTML" expanded="false" />
+            <element signature="e#1050#1327#0#HTML" expanded="false" />
+            <element signature="e#1356#1758#0#HTML" expanded="false" />
+            <element signature="e#1814#6158#0#HTML" expanded="false" />
+            <element signature="e#1983#2203#0#HTML" expanded="false" />
+            <element signature="e#2232#3505#0#HTML" expanded="false" />
+            <element signature="e#2359#2378#0#HTML" expanded="true" />
+            <element signature="e#3534#4037#0#HTML" expanded="false" />
+            <element signature="e#3661#3680#0#HTML" expanded="true" />
+            <element signature="e#4066#4570#0#HTML" expanded="false" />
+            <element signature="e#4193#4212#0#HTML" expanded="true" />
+            <element signature="e#4599#5103#0#HTML" expanded="false" />
+            <element signature="e#4726#4745#0#HTML" expanded="true" />
+            <element signature="e#5132#5634#0#HTML" expanded="false" />
+            <element signature="e#5259#5278#0#HTML" expanded="true" />
+            <element signature="e#5663#6128#0#HTML" expanded="false" />
+            <element signature="e#5790#5809#0#HTML" expanded="true" />
+            <element signature="e#6253#9250#0#HTML" expanded="false" />
+            <element signature="e#6328#7274#0#HTML" expanded="false" />
+            <element signature="e#7303#8242#0#HTML" expanded="false" />
+            <element signature="e#8271#9219#0#HTML" expanded="false" />
+            <element signature="e#9560#10763#0#HTML" expanded="false" />
+            <element signature="e#10432#10729#0#HTML" expanded="false" />
+            <element signature="e#10976#38563#0#HTML" expanded="false" />
+            <element signature="e#37760#38527#0#HTML" expanded="false" />
+            <element signature="e#38849#38904#0#HTML" expanded="true" />
+            <element signature="e#38997#39017#0#HTML" expanded="true" />
+            <element signature="e#39091#39174#0#HTML" expanded="true" />
+            <element signature="e#39178#39243#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/views/main/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="413" column="41" lean-forward="false" selection-start-line="413" selection-start-column="41" selection-end-line="413" selection-end-column="41" />
+        <state relative-caret-position="294">
+          <caret line="686" column="86" lean-forward="false" selection-start-line="686" selection-start-column="86" selection-end-line="686" selection-end-column="86" />
           <folding>
-            <element signature="n#div#0;n#footer#0;n#!!top" expanded="false" />
             <element signature="e#3461#8789#0#PHP" expanded="false" />
             <element signature="e#8812#10080#0#PHP" expanded="false" />
-            <element signature="e#15190#15385#0#HTML" expanded="false" />
-            <element signature="e#15432#15627#0#HTML" expanded="false" />
-            <element signature="e#15676#15871#0#HTML" expanded="false" />
-            <element signature="e#15917#16112#0#HTML" expanded="false" />
-            <element signature="e#16160#16355#0#HTML" expanded="false" />
-            <element signature="e#16403#16598#0#HTML" expanded="false" />
-            <element signature="e#16647#16842#0#HTML" expanded="false" />
-            <element signature="e#16890#17792#0#HTML" expanded="false" />
-            <element signature="e#17107#17773#0#HTML" expanded="false" />
-            <element signature="e#17840#18745#0#HTML" expanded="false" />
-            <element signature="e#18793#18988#0#HTML" expanded="false" />
-            <element signature="e#19037#19232#0#HTML" expanded="false" />
-            <element signature="e#19283#19478#0#HTML" expanded="false" />
-            <element signature="e#19535#19730#0#HTML" expanded="false" />
-            <element signature="e#19782#19977#0#HTML" expanded="false" />
-            <element signature="e#20029#20224#0#HTML" expanded="false" />
-            <element signature="e#20274#20469#0#HTML" expanded="false" />
+            <element signature="e#10095#20519#0#PHP" expanded="false" />
+            <element signature="e#21839#25582#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

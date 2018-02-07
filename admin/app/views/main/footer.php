@@ -434,6 +434,304 @@
             });
         </script>
     <?php } ?>
+
+    <?php if(isset($f) && $f == "car-edit") { ?>
+        <script>
+            $(document).ready(function () {
+
+                var title   = $(".car-title");
+                var sub     = $(".car-sub");
+                var price   = $(".car-price");
+                var km      = $(".car-km");
+                var pay     = $(".car-pay");
+                var hire    = $(".car-hire");
+                var credit  = $(".car-credit");
+                var year    = $(".car-year");
+
+                var type    = $(".car-type");
+                var mfc     = $(".car-mfc");
+                var mdl     = $(".car-mdl");
+                var vrs     = $(".car-vrs");
+                var fuel    = $(".car-fuel");
+                var engine  = $(".car-engine");
+                var transmission = $(".car-transmission");
+                var incolor = $(".car-in-color");
+                var outcolor = $(".car-out-color");
+
+                var passenger = $(".car-passenger");
+                var door    = $(".car-door");
+                var citycons = $(".car-city-cons");
+                var outcons = $(".car-out-cons");
+                var sales = $(".car-sales");
+                var description = $(".car-desc");
+
+                var btn     = $(".add-car-submit");
+
+                function isNecessartAreasValid(){
+
+                    var title   = $(".car-title");
+                    var sub     = $(".car-sub");
+                    var price   = $(".car-price");
+                    var km      = $(".car-km");
+                    var pay     = $(".car-pay");
+                    var hire    = $(".car-hire");
+                    var credit  = $(".car-credit");
+                    var year    = $(".car-year");
+
+                    var type    = $(".car-type");
+                    var mfc     = $(".car-mfc");
+                    var mdl     = $(".car-mdl");
+                    var vrs     = $(".car-vrs");
+                    var fuel    = $(".car-fuel");
+                    var engine  = $(".car-engine");
+                    var transmission = $(".car-transmission");
+                    var incolor = $(".car-in-color");
+                    var outcolor = $(".car-out-color");
+
+                    var passenger = $(".car-passenger");
+                    var door    = $(".car-door");
+                    var citycons = $(".car-city-cons");
+                    var outcons = $(".car-out-cons");
+                    var sales = $(".car-sales");
+                    var description = $(".car-desc");
+
+                    if(title.val().length > 0){
+                        if(sub.val().length > 0){
+                            if(price.val().length > 0 && price.val() > 0) {
+                                if (km.val().length > 0 && km.val() > 0) {
+                                    if(hire.val().length > 0 && hire.val() > 0){
+                                        if(year.val().length > 0 && year.val() > 1900 && year.val() < 2040) {
+
+                                            if (type.val() > 0) {
+                                                if (mfc.val() > 0) {
+                                                    if (mdl.val() > 0) {
+                                                        if (vrs.val() > 0) {
+                                                            if (fuel.val() > 0) {
+                                                                if (engine.val() > 0) {
+                                                                    if (transmission.val() > 0) {
+                                                                        if (incolor.val() > 0) {
+                                                                            if (outcolor.val() > 0) {
+
+                                                                                if (sales.val() > 0) {
+
+                                                                                    return true;
+
+                                                                                } else return false;
+
+                                                                            } else return false;
+                                                                        } else return false;
+                                                                    } else return false;
+                                                                } else return false;
+                                                            } else return false;
+                                                        } else return false;
+                                                    } else return false;
+                                                } else return false;
+                                            } else return false;
+
+                                        }else return false
+                                    }else return false;
+                                }else return false;
+                            }else return false;
+                        }else return false;
+                    }else return false;
+
+                }
+
+                title.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                sub.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                price.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                km.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                hire.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                year.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                type.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                mfc.on("change", function () {
+
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+
+                    if(mfc.val() > 0){
+                        $.ajax("<?php echo $base ?>ajax/mfctomdl/"+mfc.val(),{
+                            dataType:"json"
+                        }).done(function (data) {
+                            mdl.children("option").remove();
+                            mdl.append("<option value='0' selected disabled> Lütfen Model Seçin ( Zorunlu ) </option>");
+                            mdl.attr("disabled", false);
+                            $.each(data, function ( index, data) {
+                                mdl.append("<option value='"+ data.id +"'>" + data.name + "</option>");
+                            });
+                        });
+                    }
+
+                });
+                mdl.on("change", function () {
+
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+
+                    if(mdl.val() > 0){
+                        $.ajax("<?php echo $base ?>ajax/mdltovrs/"+mdl.val(),{
+                            dataType:"json"
+                        }).done(function (data) {
+                            vrs.children("option").remove();
+                            vrs.append("<option value='0' selected disabled> Lütfen Versiyon Seçin ( Zorunlu ) </option>");
+                            vrs.attr("disabled", false);
+                            $.each(data, function ( index, data) {
+                                vrs.append("<option value='"+ data.id +"'>" + data.name + "</option>");
+                            });
+                        });
+                    }
+
+                });
+                vrs.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                fuel.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                engine.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                transmission.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                incolor.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                })
+                outcolor.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                sales.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+
+                var Upload = function (file) {
+                    this.file = file;
+                };
+
+                Upload.prototype.getType = function() {
+                    return this.file.type;
+                };
+                Upload.prototype.getSize = function() {
+                    return this.file.size;
+                };
+                Upload.prototype.getName = function() {
+                    return this.file.name;
+                };
+                Upload.prototype.doUpload = function () {
+                    var that = this;
+                    var formData = new FormData();
+
+                    formData.append("file", this.file, this.getName());
+                    formData.append("upload_file", true);
+
+                    $.ajax("<?php echo $base ?>ajax/upCarPhoto/<?php echo $param ?>", {
+                        type: "POST",
+                        xhr: function () {
+                            var myXhr = $.ajaxSettings.xhr();
+                            if (myXhr.upload) {
+                                myXhr.upload.addEventListener('progress', that.progressHandling, false);
+                            }
+                            return myXhr;
+                        },
+                        success: function (data) {
+                            // your callback here
+                        },
+                        error: function (error) {
+                            // handle error
+                        },
+                        async: true,
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        timeout: 60000
+                    });
+                };
+
+                Upload.prototype.progressHandling = function (event) {
+                    var percent = 0;
+                    var position = event.loaded || event.position;
+                    var total = event.total;
+                    var progress_bar_id = "#progress-wrp";
+                    if (event.lengthComputable) {
+                        percent = Math.ceil(position / total * 100);
+                    }
+                    // update progressbars classes so it fits your code
+                    $(progress_bar_id + " .progress-bar").css("width", +percent + "%");
+                    $(progress_bar_id + " .status").text(percent + "%");
+                };
+
+                var addPhoto = $(".add-photo");
+                var photoInput = $("#new-photo");
+                addPhoto.on("click", function () {
+                    photoInput.trigger("click");
+                });
+                photoInput.change(function () {
+                    console.log($(this)[0].files[0]);
+                })
+            });
+        </script>
+    <?php } ?>
     <!--end::Page Snippets -->
     </body>
 <!-- end::Body -->
