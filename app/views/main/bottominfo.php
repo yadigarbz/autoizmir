@@ -28,12 +28,12 @@
                 </aside>
             </div>
             <div class="col-md-4 col-xs-12">
-                <?php
-                    $last = getLastAddedCars();
-                    foreach($last as $item){
-                ?>
-                    <div class="b-info__latest">
-                        <h3 class="wow slideInUp" data-wow-delay="0.3s">Son Eklenenler</h3>
+                <div class="b-info__latest">
+                    <h3 class="wow slideInUp" data-wow-delay="0.3s">Son Eklenenler</h3>
+                    <?php
+                        $last = getLastAddedCars();
+                        foreach($last as $item){
+                    ?>
                         <div class="b-info__latest-article wow slideInUp" data-wow-delay="0.3s">
                             <div class="b-info__latest-article-photo m-audi" style="background:url(<?php echo $base ?>images/cars/<?php echo $item["photo"] ?>); background-size:cover; background-position:center center; background-repeat: no-repeat;"></div>
                             <div class="b-info__latest-article-info">
@@ -48,8 +48,8 @@
                                 <p><span class="fa fa-tachometer"></span> <?php echo priceWriter($item["km"]) ?> KM</p>
                             </div>
                         </div>
-                    </div>
-                <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
             <div class="col-md-4 col-xs-12">
                 <address class="b-info__contacts wow slideInUp" data-wow-delay="0.3s">
@@ -73,7 +73,7 @@
                     </div>
                 </address>
                 <address class="b-info__map">
-                    <a href="../../../index.php">Harita Konumunu Göster</a>
+                    <a href="<?php echo $base."iletisim.html" ?>">Harita Konumunu Göster</a>
                 </address>
             </div>
         </div>

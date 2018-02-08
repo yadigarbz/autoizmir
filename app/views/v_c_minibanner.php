@@ -8,6 +8,9 @@
         case 'hakkimizda':
             $title = "Hakkımızda";
             break;
+        case 'iletisim':
+            $title = "İletişim";
+            break;
         default:
             $title = "Arabalar";
     }

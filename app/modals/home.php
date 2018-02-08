@@ -51,10 +51,13 @@ function getCarMainPhoto( $id ){
     return $photo;
 
 }
-function getLastAddedCars(){
+function getCarSpect ( $id ){
+    global $base;
     global $con;
-    $cars = array();
-    $query = "SELECT cr.car_id as id,
+
+    $car = array();
+    if(!isInjectionWord($id)){
+        $query = "SELECT cr.car_id as id,
                         cr.year as cy,
                         cr.car_title as title,
                         cr.price as price,
@@ -77,13 +80,35 @@ function getLastAddedCars(){
                   INNER JOIN transmission_types tt ON tt.ttyp_id = cr.ttyp_id
                   INNER JOIN colors cco ON cco.clr_id = cr.out_c 
                   INNER JOIN car_photos cp ON cp.car_id = cr.car_id
-                  WHERE cr.sta_id = 1 and cp.is_main = 1 ORDER BY add_time DESC LIMIT 3";
+                  WHERE cr.car_id = $id";
+        $sql = mysqli_query($con, $query);
+        if($sql){
+                $car = mysqli_fetch_assoc($sql);
+        }else{
+            echo mysqli_error($con);
+        }
+    }
+    return $car;
+}
+function getDizelCars(){
+   global $con;
+   $cars = array();
+   $query = "SELECT car_id as id FROM dizelSlider";
+   $sql = mysqli_query($con, $query);
+   if($sql){
+       while($data = mysqli_fetch_array($sql))
+           $cars[] = getCarSpect($data["id"]);
+   }
+   return $cars;
+}
+function getBenzinCars(){
+    global $con;
+    $cars = array();
+    $query = "SELECT car_id as id FROM benzinSlider";
     $sql = mysqli_query($con, $query);
     if($sql){
-        while($data = mysqli_fetch_assoc($sql))
-            $cars[] = $data;
-    }else{
-        echo mysqli_error($con);
+        while($data = mysqli_fetch_array($sql))
+            $cars[] = getCarSpect($data["id"]);
     }
     return $cars;
 }
