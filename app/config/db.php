@@ -18,6 +18,11 @@
             $param["user"] = "root";
             $param["pass"] = "";
             $param["db"] = "autoizmir";
+        }elseif($paramT == 2){
+            $param["host"] = "localhost";
+            $param["user"] = "goradesi_autoizmir";
+            $param["pass"] = "autoizmir*35";
+            $param["db"] = "goradesi_autoizmir";
         }
 
         return $param;
@@ -26,7 +31,7 @@
 
     function getConnection(){
 
-        $p = paramaterSelector(1);
+        $p = paramaterSelector(2);
         $con = mysqli_connect($p["host"], $p["user"], $p["pass"], $p["db"]);
 
         if(!$con){

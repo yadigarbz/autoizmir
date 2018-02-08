@@ -5,7 +5,7 @@
  * Date: 31.01.2018
  * Time: 23:16
  */
-    $base = "//".$_SERVER["SERVER_NAME"]."/izmir/";
+    $base = "//".$_SERVER["SERVER_NAME"]."/";
     $app = $base."app";
     $views = $app."views";
 

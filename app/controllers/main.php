@@ -6,8 +6,8 @@
  * Time: 23:43
  */
 
-    $mP = __DIR__.'..\../modals/';
-    $vP = __DIR__.'..\../views/';
+    $mP = __DIR__.'../../modals/';
+    $vP = __DIR__.'../../views/';
 
     require_once $mP.'home.php';
 

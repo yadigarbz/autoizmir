@@ -6,7 +6,7 @@
  * Time: 21:40
  */
 
-    $vP= $aBase."\../views/";
+    $vP= $aBase."/../views/";
 
     $utype = getUserGrade();
 

@@ -28,55 +28,32 @@
                 </aside>
             </div>
             <div class="col-md-4 col-xs-12">
-                <div class="b-info__latest">
-                    <h3 class="wow slideInUp" data-wow-delay="0.3s">Son Eklenenler</h3>
-                    <div class="b-info__latest-article wow slideInUp" data-wow-delay="0.3s">
-                        <div class="b-info__latest-article-photo m-audi"></div>
-                        <div class="b-info__latest-article-info">
-                            <h6><a href="../../../index.php">MERCEDES-AMG GT S</a></h6>
-                            <div class="b-featured__item-links m-auto">
-                                <a href="#">Used</a>
-                                <a href="#">2014</a>
-                                <a href="#">Manual</a>
-                                <a href="#">Orange</a>
-                                <a href="#">Petrol</a>
+                <?php
+                    $last = getLastAddedCars();
+                    foreach($last as $item){
+                ?>
+                    <div class="b-info__latest">
+                        <h3 class="wow slideInUp" data-wow-delay="0.3s">Son Eklenenler</h3>
+                        <div class="b-info__latest-article wow slideInUp" data-wow-delay="0.3s">
+                            <div class="b-info__latest-article-photo m-audi" style="background:url(<?php echo $base ?>images/cars/<?php echo $item["photo"] ?>); background-size:cover; background-position:center center; background-repeat: no-repeat;"></div>
+                            <div class="b-info__latest-article-info">
+                                <h6><a href="<?php echo $base ?>arabalar/detay/<?php echo $item["id"] ?>"><?php echo $item["title"] ?></a></h6>
+                                <div class="b-featured__item-links m-auto">
+                                    <a href="#"><?php echo $item["hire"] ?></a>
+                                    <a href="#"><?php echo $item["cy"] ?></a>
+                                    <a href="#"><?php echo $item["transmission"] ?></a>
+                                    <a href="#"><?php echo $item["coloro"] ?></a>
+                                    <a href="#"><?php echo $item["fuel"] ?></a>
+                                </div>
+                                <p><span class="fa fa-tachometer"></span> <?php echo priceWriter($item["km"]) ?> KM</p>
                             </div>
-                            <p><span class="fa fa-tachometer"></span> 35,000 KM</p>
                         </div>
                     </div>
-                    <div class="b-info__latest-article wow slideInUp" data-wow-delay="0.3s">
-                        <div class="b-info__latest-article-photo m-audiSpyder"></div>
-                        <div class="b-info__latest-article-info">
-                            <h6><a href="../../../index.php">AUDI R8 SPYDER V-8</a></h6>
-                            <div class="b-featured__item-links m-auto">
-                                <a href="#">Used</a>
-                                <a href="#">2014</a>
-                                <a href="#">Manual</a>
-                                <a href="#">Orange</a>
-                                <a href="#">Petrol</a>
-                            </div>
-                            <p><span class="fa fa-tachometer"></span> 35,000 KM</p>
-                        </div>
-                    </div>
-                    <div class="b-info__latest-article wow slideInUp" data-wow-delay="0.3s">
-                        <div class="b-info__latest-article-photo m-aston"></div>
-                        <div class="b-info__latest-article-info">
-                            <h6><a href="../../../index.php">ASTON MARTIN VANTAGE</a></h6>
-                            <div class="b-featured__item-links m-auto">
-                                <a href="#">Used</a>
-                                <a href="#">2014</a>
-                                <a href="#">Manual</a>
-                                <a href="#">Orange</a>
-                                <a href="#">Petrol</a>
-                            </div>
-                            <p><span class="fa fa-tachometer"></span> 35,000 KM</p>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
             <div class="col-md-4 col-xs-12">
                 <address class="b-info__contacts wow slideInUp" data-wow-delay="0.3s">
-                    <p>c İLETİŞİM </p>
+                    <p>İLETİŞİM </p>
                     <div class="b-info__contacts-item">
                         <span class="fa fa-map-marker"></span>
                         <em>202 W 7th St, Suite 233 Los Angeles,<br />

@@ -2,7 +2,7 @@
     <aside class="b-items__aside">
         <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">Aramanızı Filtreleyin</h2>
         <div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">
-            <form>
+            <form method="post" action="">
                 <div class="b-items__aside-main-body">
                     <div class="b-items__aside-main-body-item">
                         <label>Marka Seçin</label>

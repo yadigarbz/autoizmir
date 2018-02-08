@@ -6,7 +6,7 @@
  * Time: 15:11
  */
 
-    $vP= $aBase."\../views/";
+    $vP= $aBase."/../views/";
 
     require_once $vP."main/header.php";
 

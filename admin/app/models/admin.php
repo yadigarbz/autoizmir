@@ -5,7 +5,7 @@
  * Date: 8.02.2018
  * Time: 11:04
  */
-$vP= $aBase."\../views/";
+$vP= $aBase."/../views/";
 
 require_once $vP."main/header.php";
 
