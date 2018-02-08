@@ -1,12 +1,10 @@
-<?php if(isset($param) && $param == "add") {
-        if(isset($_POST["function"]) && $_POST["function"] == "add"){
-            echo "burda";
-            addCar( $_POST );
-        }else{
-            echo "velet";
+<?php if(isset($param) && $param == "update") {
+        if(isset($_POST["function"]) && $_POST["function"] == "update"){
+            updateCar( $_POST );
         }
     } elseif(isset($param) && $param > 0) {
         $cData = getCar($param);
+        $sData = getCarSpect($param);
     ?>
 <div class="m-grid__item m-grid__item--fluid m-wrapper">
     <div class="m-subheader ">
@@ -29,16 +27,13 @@
                             </div>
                             <div class="m-card-profile__pic">
                                 <div class="m-card-profile__pic-wrapper">
-                                    <img src="../assets/app/media/img/users/user4.jpg" alt=""/>
+                                    <img height="100" src="<?php echo $base ?>../images/cars/<?php echo getCarMainPhoto($param)["photo"] ?>" alt=""/>
                                 </div>
                             </div>
                             <div class="m-card-profile__details">
                                 <span class="m-card-profile__name">
-                                    Mark Andre
+                                    <?php echo $cData["title"] ?>
                                 </span>
-                                <a href="" class="m-card-profile__email m-link">
-                                    mark.andre@gmail.com
-                                </a>
                             </div>
                         </div>
                         <ul class="m-nav m-nav--hover-bg m-portlet-fit--sides">
@@ -49,59 +44,46 @@
                                 </span>
                             </li>
                             <li class="m-nav__item">
-                                <a href="../header/profile&amp;demo=default.html" class="m-nav__link" style="height:auto">
-                                    <i class="m-nav__link-icon flaticon-profile-1"></i>
+                                <a class="m-nav__link" style="height:auto">
+                                    <i class="m-nav__link-icon flaticon-coins"></i>
                                     <span class="m-nav__link-title">
-                                                            <span class="m-nav__link-wrap">
-                                                                <span class="m-nav__link-text">
-                                                                    My Profile
-                                                                </span>
-                                                                <span class="m-nav__link-badge">
-                                                                    <span class="m-badge m-badge--success">
-                                                                        2
-                                                                    </span>
-                                                                </span>
-                                                            </span>
-                                                        </span>
+                                        <span class="m-nav__link-wrap">
+                                            <span class="m-nav__link-text">
+                                                <?php echo $cData["price"] ?>
+                                            </span>
+                                        </span>
+                                    </span>
                                 </a>
                             </li>
                             <li class="m-nav__item">
-                                <a href="../header/profile&amp;demo=default.html" class="m-nav__link" style="height:auto">
+                                <a class="m-nav__link" style="height:auto">
                                     <i class="m-nav__link-icon flaticon-share"></i>
                                     <span class="m-nav__link-text">
-                                                            Activity
-                                                        </span>
+                                        <?php echo $sData["type"] ?>
+                                    </span>
                                 </a>
                             </li>
                             <li class="m-nav__item">
-                                <a href="../header/profile&amp;demo=default.html" class="m-nav__link" style="height:auto">
+                                <a class="m-nav__link" style="height:auto">
                                     <i class="m-nav__link-icon flaticon-chat-1"></i>
                                     <span class="m-nav__link-text">
-                                                            Messages
-                                                        </span>
+                                        <?php echo $sData["mfc"] ?>
+                                    </span>
                                 </a>
                             </li>
                             <li class="m-nav__item">
-                                <a href="../header/profile&amp;demo=default.html" class="m-nav__link" style="height:auto">
+                                <a class="m-nav__link" style="height:auto">
                                     <i class="m-nav__link-icon flaticon-graphic-2"></i>
                                     <span class="m-nav__link-text">
-                                                            Sales
-                                                        </span>
+                                        <?php echo $sData["mdl"] ?>
+                                    </span>
                                 </a>
                             </li>
                             <li class="m-nav__item">
-                                <a href="../header/profile&amp;demo=default.html" class="m-nav__link" style="height:auto">
+                                <a class="m-nav__link" style="height:auto">
                                     <i class="m-nav__link-icon flaticon-time-3"></i>
                                     <span class="m-nav__link-text">
-                                                            Events
-                                                        </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="../header/profile&amp;demo=default.html" class="m-nav__link" style="height:auto">
-                                    <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                    <span class="m-nav__link-text">
-                                        Support
+                                        <?php echo $cData["cy"] ?>
                                     </span>
                                 </a>
                             </li>
@@ -112,15 +94,12 @@
                                 <div class="row m-row--no-padding align-items-center">
                                     <div class="col">
                                         <h3 class="m-widget1__title">
-                                            Member Profit
+                                            Maksimum Taksit Sayısı
                                         </h3>
-                                        <span class="m-widget1__desc">
-                                            Awerage Weekly Profit
-                                        </span>
                                     </div>
                                     <div class="col m--align-right">
                                         <span class="m-widget1__number m--font-brand">
-                                            +$17,800
+                                            <?php echo $cData["hire"] ?>
                                         </span>
                                     </div>
                                 </div>
@@ -129,32 +108,12 @@
                                 <div class="row m-row--no-padding align-items-center">
                                     <div class="col">
                                         <h3 class="m-widget1__title">
-                                            Orders
+                                            Peşinat
                                         </h3>
-                                        <span class="m-widget1__desc">
-                                            Weekly Customer Orders
-                                        </span>
                                     </div>
                                     <div class="col m--align-right">
                                         <span class="m-widget1__number m--font-danger">
-                                            +1,800
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="m-widget1__item">
-                                <div class="row m-row--no-padding align-items-center">
-                                    <div class="col">
-                                        <h3 class="m-widget1__title">
-                                            Issue Reports
-                                        </h3>
-                                        <span class="m-widget1__desc">
-                                            System bugs and issues
-                                        </span>
-                                    </div>
-                                    <div class="col m--align-right">
-                                        <span class="m-widget1__number m--font-success">
-                                            -27,49%
+                                            <?php echo $cData["pay"] ?>
                                         </span>
                                     </div>
                                 </div>
@@ -189,8 +148,9 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="m_user_profile_tab_1">
-                            <form class="m-form m-form--fit m-form--label-align-right" method="post" action="car-add/add">
-                                <input type="hidden" name="function" value="add" />
+                            <form class="m-form m-form--fit m-form--label-align-right" method="post" action="<?php echo $base ?>cars/car-edit/update">
+                                <input type="hidden" name="function" value="update" />
+                                <input type="hidden" name="car_id" value="<?php echo $param ?>" />
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group row">
                                         <div class="col-10">

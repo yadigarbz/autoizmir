@@ -63,7 +63,7 @@
     <script src="<?php echo $base ?>js/base/dashboard.js" type="text/javascript"></script>
     <?php } ?>
 
-    <?php if(isset($f) && ($f == "vehicle_mdls" || $f == "vehicle_vrss")) { ?>
+    <?php if(isset($f) && ($f == "vehicle_mdls" || $f == "vehicle_vrss" || $f == "slides")) { ?>
         <script>
             $(document).ready(function(){
                 function isAddMdlNameValid(){
@@ -536,6 +536,49 @@
                     }else return false;
 
                 }
+
+                pay.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                credit.on("change", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                passenger.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                door.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                citycons.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                outcons.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
+                description.on("keyup", function () {
+                    if(isNecessartAreasValid())
+                        btn.attr("disabled",false);
+                    else
+                        btn.attr("disabled",true);
+                });
 
                 title.on("keyup", function () {
                     if(isNecessartAreasValid())

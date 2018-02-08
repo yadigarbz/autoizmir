@@ -109,7 +109,7 @@
                     break;
                 default: return false;
             }
-            if($fType == "jpeg") {
+            if($fType == "jpg") {
                 if(imagejpeg($imageResized, $target_dir.$hoid . "_".$subname."_" . "_1920." . $imageFileType))return true;
                 else return false;
             }

@@ -7,7 +7,7 @@ session_start();
  * Date: 31.01.2018
  * Time: 23:16
  */
-$base = "//".$_SERVER["SERVER_NAME"]."/autoizmir/admin/";
+$base = "//".$_SERVER["SERVER_NAME"]."/izmir/admin/";
 $app = $base."app";
 $views = $app."views";
 

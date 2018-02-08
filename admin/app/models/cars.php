@@ -246,6 +246,41 @@
         }
         return $car;
     }
+    function getCarSpect ( $id ){
+        global $base;
+        global $con;
+
+        $car = array();
+        if(!isInjectionWord($id)){
+            $query = "SELECT cr.car_id as id,
+                        ct.typ_name as type,
+                        et.etyp_name as engine,
+                        cmf.mfc_name as mfc,
+                        cmd.mdl_name as mdl,
+                        ft.ftyp_name as fuel,
+                        tt.ttyp_name as transmission,
+                        cc.clr_name as color,
+                        sm.smn_name as sales
+                  FROM cars cr
+                  INNER JOIN car_types ct ON ct.typ_id = cr.typ_id
+                  INNER JOIN car_manifacturers cmf ON cmf.mfc_id = cr.mfc_id
+                  INNER JOIN car_models cmd ON cmd.mdl_id = cr.mdl_id
+                  INNER JOIN fuel_types ft ON ft.ftyp_id = cr.ftyp_id
+                  INNER JOIN transmission_types tt ON tt.ttyp_id = cr.ttyp_id
+                  INNER JOIN engine_types et ON et.etyp_id = cr.etyp_id
+                  INNER JOIN colors cc ON cc.clr_id = cr.out_c
+                  INNER JOIN sales_managers sm ON sm.smn_id = cr.sales 
+                  WHERE car_id = $id";
+            $sql = mysqli_query($con, $query);
+            if($sql){
+                while($data = mysqli_fetch_assoc($sql))
+                    $car = $data;
+            }else{
+                echo mysqli_error($con);
+            }
+        }
+        return $car;
+    }
     function addCar($var){
 
         global $con;
@@ -341,6 +376,75 @@
         }
 
     }
+    function updateCar($var){
+
+        global $con;
+        global $base;
+
+        if(!isInjectionWord($var)){
+
+            $id = $var["car_id"];
+            $title = $var["title"];
+            $sub = $var["sub"];
+            $price = $var["price"];
+            $km = $var["kilometer"];
+            $year = $var["year"];
+            $credit = isset($var["credit"]) ? true : false;
+            $pay = $var["payment"];
+            $hire = $var["hire"];
+            $type = $var["type"];
+            $mfc = $var["mfc"];
+            $mdl = $var["mdl"];
+            $vrs = $var["vrs"];
+            $fuel = $var["fuel"];
+            $engine = $var["engine"];
+            $trans = $var["transmission"];
+            $oColor = $var["out-color"];
+            $iColor = $var["in-color"];
+            $passenger = $var["passenger"];
+            $door = $var["door"];
+            $citycons = $var["city-cons"];
+            $outcons = $var["out-cons"];
+            $sales = $var["sales"];
+            $desc = $var["description"];
+
+            $query = "UPDATE cars SET 
+                        car_title = '$title',
+                        car_subtitle = '$sub',
+                        sta_id = 1,
+                        price = $price,
+                        c_creadit = '$credit',
+                        hire_p = '$hire',
+                        a_payment = '$pay',
+                        car_kilometer = $km,
+                        year = $year,
+                        typ_id = $type,
+                        mfc_id = $mfc,
+                        mdl_id = $mdl,
+                        vrs_id = $vrs,
+                        etyp_id = $engine,
+                        ttyp_id = $trans,
+                        out_c = $oColor,
+                        inside_c = $iColor,
+                        passenger = '$passenger',
+                        doors = '$door',
+                        ftyp_id = $fuel,
+                        city_cons = '$citycons',
+                        out_cons = '$outcons',
+                        description = '$desc',
+                        sales = $sales WHERE car_id = $id";
+
+            $sql = mysqli_query($con, $query);
+
+            if($sql){
+                header("Location: ".$base."cars/car-edit/$id");
+            }else{
+                echo mysqli_error($con);
+            }
+
+        }
+
+    }
 
     function getCarPhotos( $id ){
 
@@ -356,6 +460,20 @@
             }
         }
         return $photos;
+
+    }
+    function getCarMainPhoto( $id ){
+
+        global $con;
+        $photo = array();
+        if(!isInjectionWord($id)){
+            $query = "SELECT photo_id as id, photo_path as photo, is_main as main FROM car_photos WHERE car_id = $id and is_main = 1";
+            $sql = mysqli_query($con, $query);
+            if($sql){
+                $photo = mysqli_fetch_array($sql);
+            }
+        }
+        return $photo;
 
     }
 

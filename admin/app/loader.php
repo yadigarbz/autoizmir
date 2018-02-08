@@ -14,6 +14,8 @@ function loader($p) {
         switch ($p) {
             case 'ajax':
                 require_once "ajax/index.php";break;
+            case 'adminf':
+                require_once "controllers/admin.php";break;
             case 'defination':
                 require_once "controllers/definations.php";break;
             case 'cars':

@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteRule ^ajax/(.*)/(.*)/(.*) index.php?p=ajax&f=$1&param=$2&param1=$3
 RewriteRule ^ajax/(.*)/(.*) index.php?p=ajax&f=$1&param=$2
+RewriteRule ^adminf/(.*)/delete/(.*) index.php?p=adminf&f=$1&param=delete&id=$2
+RewriteRule ^adminf/(.*)/(.*) index.php?p=adminf&f=$1&param=$2
+RewriteRule ^adminf/(.*) index.php?p=adminf&f=$1
 RewriteRule ^definations/(.*)/delete/(.*) index.php?p=defination&f=$1&param=delete&id=$2
 RewriteRule ^definations/(.*)/(.*) index.php?p=defination&f=$1&param=$2
 RewriteRule ^definations/(.*) index.php?p=defination&f=$1

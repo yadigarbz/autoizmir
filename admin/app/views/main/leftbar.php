@@ -144,19 +144,49 @@
             <a  href="inner.html" class="m-menu__link m-menu__toggle">
                 <i class="m-menu__link-icon flaticon-light"></i>
                 <span class="m-menu__link-text">
-                                        Administration
-                                    </span>
+                    Administration
+                </span>
                 <i class="m-menu__ver-arrow la la-angle-right"></i>
             </a>
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"  data-redirect="true">
-                                            <span class="m-menu__link">
-                                                <span class="m-menu__link-text">
-                                                    Administration
-                                                </span>
-                                            </span>
+                        <span class="m-menu__link">
+                            <span class="m-menu__link-text">
+                                Yönetim
+                            </span>
+                        </span>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
+                        <a  href="<?php echo $base ?>adminf/slides/list" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+                                Slaytlar
+                            </span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
+                        <a  href="<?php echo $base ?>cars/list/active" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+                                Aktif İlanlar
+                            </span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
+                        <a  href="<?php echo $base ?>cars/list/pasive" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+                                Pasif İlanlar
+                            </span>
+                        </a>
                     </li>
                 </ul>
             </div>

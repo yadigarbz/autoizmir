@@ -1,6 +1,6 @@
 <section class="b-search">
     <div class="container">
-        <form action="listings.html" method="POST" class="b-search__main">
+        <form action="<?php echo $base; ?>arabalar.html" method="POST" class="b-search__main">
             <div class="b-search__main-title wow zoomInUp" data-wow-delay="0.3s">
                 <h2>NASIL BİR ARAÇ ARADIĞINIZDAN EMİN DEĞİL MİSİNİZ? ŞİMDİ BULUN!</h2>
             </div>
@@ -331,7 +331,7 @@
                             <input type="hidden" name="max" class="j-max" />
                         </div>
                         <div class="b-search__main-form-submit">
-                            <a href="#">TÜM ARAÇLAR</a>
+                            <a href="<?php echo $base; ?>arabalar.html">TÜM ARAÇLAR</a>
                             <button type="submit" class="btn m-btn">ARAÇ ARA!<span class="fa fa-angle-right"></span></button>
                         </div>
                     </div>
