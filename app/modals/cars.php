@@ -16,12 +16,39 @@
 
     if($f == "page"){
         if(isset($param) && intval($param) > 1){
-            $page = $_GET["page"];
-        }
+
+
+            $page = $param;
+
+        }else
+            $page = 1;
     }elseif($f == "detail"){
         if(isset($param) && intval($param) > 0){
             $car = $param;
         }
+    }
+
+    function countActiveCars(){
+        global $con;
+        $data = array();
+        $query = "SELECT count(car_id) as ccount FROM cars WHERE sta_id = 1";
+        $sql = mysqli_query($con, $query);
+        if($sql){
+            $data = mysqli_fetch_array($sql);
+        }
+        return $data;
+    }
+    function getPages($cars){
+        $firstPage = 1;
+        $lastPage = 1;
+        $allPages = ceil($cars/6);
+        if($allPages > 1){
+            $lastPage = $allPages;
+        }
+        $pages["all"] = $allPages;
+        $pages["first"] = $firstPage;
+        $pages["last"] = $lastPage;
+        return $pages;
     }
 
     function getCarPhotos( $id ){
@@ -211,6 +238,7 @@
     //require_once $vP.'v_c_infobar.php';
     switch ($f) {
         case "page";
+            $allCars = countActiveCars();
             require_once $vP.'v_c_carslist.php';break;
         case "detail":
             require_once $vP."v_c_car_detail.php";break;

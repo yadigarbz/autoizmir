@@ -269,6 +269,18 @@
         }else return false;
     }
 
+    function getCars(){
+        global $con;
+        $cars = array();
+        $query = "SELECT car_id as id, car_title as title FROM cars WHERE sta_id = 1";
+        $sql = mysqli_query($con, $query);
+        if($sql)
+            while($data = mysqli_fetch_assoc($sql))
+                $cars[] = $data;
+
+        return json_encode($cars);
+    }
+
     if(isset($_GET["f"]) && isset($_GET["param"])){
 
         $f = $_GET["f"];
@@ -281,6 +293,8 @@
         if(!isInjectionWord($p)){
 
             switch($f){
+                case "getcars":
+                    echo getCars();break;
                 case "delphoto":
                     echo delphoto($p);break;
                 case "domainphoto":

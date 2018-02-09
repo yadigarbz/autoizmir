@@ -60,9 +60,15 @@
         </div>
         <?php } ?>
     </div>
+    <?php
+        $pages = getPages($allCars);
+        if($pages["all"] > 1){
+    ?>
     <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
+
         <div class="b-items__pagination-main">
             <a href="#" class="m-left"><span class="fa fa-angle-left"></span></a>
+            <?php for($i = 0; $i<$pages) ?>
             <span class="m-active"><a href="#">1</a></span>
             <span><a href="#">2</a></span>
             <span><a href="#">3</a></span>
@@ -70,4 +76,5 @@
             <a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>
         </div>
     </div>
+    <?php } ?>
 </div>

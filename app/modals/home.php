@@ -80,7 +80,7 @@ function getCarSpect ( $id ){
                   INNER JOIN transmission_types tt ON tt.ttyp_id = cr.ttyp_id
                   INNER JOIN colors cco ON cco.clr_id = cr.out_c 
                   INNER JOIN car_photos cp ON cp.car_id = cr.car_id
-                  WHERE cr.car_id = $id";
+                  WHERE cr.car_id = $id and cp.is_main = 1";
         $sql = mysqli_query($con, $query);
         if($sql){
                 $car = mysqli_fetch_assoc($sql);

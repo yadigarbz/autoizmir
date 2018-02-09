@@ -116,10 +116,204 @@ function slideDelete($variables){
     if(!isInjectionWord($variables["id"])){
 
         $mfcId     = $variables["id"];
-        $query      = "DELETE FROM car_models WHERE mdl_id = $mfcId";
+        $query      = "DELETE FROM slides WHERE slide_id = $mfcId";
         $sql        = mysqli_query($con, $query);
         if($sql){
-            header("Location: ".$base."definations/vehicle_mdls/list");
+            header("Location: ".$base."adminf/slides/list");
+        }
+    }
+}
+
+function getBenzins(){
+    global $con;
+    $types = array();
+    $query = "SELECT sl.slide_id as id, cr.car_title as title FROM benzinSlider sl
+              INNER JOIN cars cr ON cr.car_id = sl.car_id";
+    $sql = mysqli_query($con, $query);
+    if($sql){
+        while($data = mysqli_fetch_assoc($sql)){
+            $types[] = $data;
+        }
+    }else{
+        echo mysqli_error($con);
+    }
+    return $types;
+}
+function setBenzinColumns(){
+    $uType = getUserGrade();
+    $deleteButton = $uType == 1 ? '<a href="delete/\' + row.id + \'" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"><i class="fa fa-trash"></i></a>\\' : '\\';
+    $columnObject = '
+                    [
+                        {
+                            field : "id",
+                            title : "#",
+                            width : 50,
+                            sortable : true,
+                            textAlign: "center"
+                        },
+                        {
+                            field : "title",
+                            title  : "İlan Adı"
+                        },
+                        {
+                            field: "Actions",
+                            width: 110,
+                            title: "İşlemler",
+                            sortable: false,
+                            overflow: "visible",
+                            template: function (row, index, datatable) {
+                                var dropup = (datatable.getPageSize() - index) <= 4 ? "dropup" : "";
+                
+                                return \'\
+                                ' . $deleteButton . '
+                                \';
+                            }
+                        }
+                    ]
+                ';
+
+    return $columnObject;
+}
+function benzinUpdate($variables){
+    global $base;
+    global $con;
+    if(!isInjectionWord($variables["id"]) && !isInjectionWord($variables["mfcid"])){
+
+        $typeId     = $variables["id"];
+        $mfcid      = $variables["mfcid"];
+        $query      = "UPDATE benzinSlider SET car_id = $mfcid WHERE slide_id = $typeId";
+        $sql        = mysqli_query($con, $query);
+        if($sql){
+            header("Location: ".$base."adminf/benzins/list");
+        }
+
+    }
+}
+function benzinAdd($variables){
+    global $base;
+    global $con;
+
+    if(!isInjectionWord($variables["mfcid"])){
+
+        $mfcID      = isset($variables["mfcid"]) ? $variables["mfcid"] : "null";
+        $query      = "INSERT INTO benzinSlider(car_id) VALUES ( $mfcID)";
+        $sql        = mysqli_query($con, $query);
+        if($sql){
+            header("Location: ".$base."adminf/benzins/list");
+        }else echo mysqli_error($con);
+
+    }else{
+        echo "fuck";
+    }
+
+}
+function benzinDelete($variables){
+    global $base;
+    global $con;
+    if(!isInjectionWord($variables["id"])){
+
+        $mfcId     = $variables["id"];
+        $query      = "DELETE FROM benzinSlider WHERE slide_id = $mfcId";
+        $sql        = mysqli_query($con, $query);
+        if($sql){
+            header("Location: ".$base."adminf/benzins/list");
+        }
+    }
+}
+
+function getDizels(){
+    global $con;
+    $types = array();
+    $query = "SELECT sl.slide_id as id, cr.car_title as title FROM dizelSlider sl
+              INNER JOIN cars cr ON cr.car_id = sl.car_id";
+    $sql = mysqli_query($con, $query);
+    if($sql){
+        while($data = mysqli_fetch_assoc($sql)){
+            $types[] = $data;
+        }
+    }else{
+        echo mysqli_error($con);
+    }
+    return $types;
+}
+function setDizelColumns(){
+    $uType = getUserGrade();
+    $deleteButton = $uType == 1 ? '<a href="delete/\' + row.id + \'" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"><i class="fa fa-trash"></i></a>\\' : '\\';
+    $columnObject = '
+                    [
+                        {
+                            field : "id",
+                            title : "#",
+                            width : 50,
+                            sortable : true,
+                            textAlign: "center"
+                        },
+                        {
+                            field : "title",
+                            title  : "İlan Adı"
+                        },
+                        {
+                            field: "Actions",
+                            width: 110,
+                            title: "İşlemler",
+                            sortable: false,
+                            overflow: "visible",
+                            template: function (row, index, datatable) {
+                                var dropup = (datatable.getPageSize() - index) <= 4 ? "dropup" : "";
+                
+                                return \'\
+                                ' . $deleteButton . '
+                                \';
+                            }
+                        }
+                    ]
+                ';
+
+    return $columnObject;
+}
+function dizelUpdate($variables){
+    global $base;
+    global $con;
+    if(!isInjectionWord($variables["id"]) && !isInjectionWord($variables["mfcid"])){
+
+        $typeId     = $variables["id"];
+        $mfcid      = $variables["mfcid"];
+        $query      = "UPDATE dizelSlider SET car_id = $mfcid WHERE slide_id = $typeId";
+        $sql        = mysqli_query($con, $query);
+        if($sql){
+            header("Location: ".$base."adminf/dizels/list");
+        }
+
+    }
+}
+function dizelAdd($variables){
+    global $base;
+    global $con;
+
+    if(!isInjectionWord($variables["mfcid"])){
+
+        $mfcID      = isset($variables["mfcid"]) ? $variables["mfcid"] : "null";
+        $query      = "INSERT INTO dizelSlider(car_id) VALUES ( $mfcID)";
+        $sql        = mysqli_query($con, $query);
+        if($sql){
+            header("Location: ".$base."adminf/dizels/list");
+        }else echo mysqli_error($con);
+
+    }else{
+        echo "fuck";
+    }
+
+}
+function dizelDelete($variables){
+    global $base;
+    global $con;
+    if(!isInjectionWord($variables["id"])){
+
+        $mfcId     = $variables["id"];
+        $query      = "DELETE FROM dizelSlider WHERE slide_id = $mfcId";
+        $sql        = mysqli_query($con, $query);
+        if($sql){
+            header("Location: ".$base."adminf/dizels/list");
         }
     }
 }
@@ -134,16 +328,24 @@ else
 
 $columns    = "";
 $data       = "";
-switch ($f){
-    case 'slides':
+
+switch($f){
+    case 'dizels':
+        $columns    = setDizelColumns();
+        $data       = getDizels();
+        $page["name"] = "Dizel Slayt";
+        require_once $vP."v_dizel_add.php";
+        break;
+    case 'benzins':
+        $columns    = setBenzinColumns();
+        $data       = getBenzins();
+        $page["name"] = "Benzin Slayt";
+        require_once $vP."v_benzin_add.php";
+        break;
+    default:
         $columns    = setSlideColumns();
         $data       = getSlides();
         $page["name"] = "Slayt";
-        break;
-}
-
-switch($f){
-    default:
         require_once $vP."v_slide_add.php";
 }
 

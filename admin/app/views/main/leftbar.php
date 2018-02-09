@@ -169,22 +169,22 @@
                         </a>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
-                        <a  href="<?php echo $base ?>cars/list/active" class="m-menu__link ">
+                        <a  href="<?php echo $base ?>adminf/benzins/list" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-                                Aktif İlanlar
+                                Benzin Slider
                             </span>
                         </a>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
-                        <a  href="<?php echo $base ?>cars/list/pasive" class="m-menu__link ">
+                        <a  href="<?php echo $base ?>adminf/dizels/list" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-                                Pasif İlanlar
+                                Dizel Slider
                             </span>
                         </a>
                     </li>

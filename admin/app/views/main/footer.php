@@ -6,7 +6,7 @@
                 <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
                                 <span class="m-footer__copyright">
                                     2018 &copy; Yönetici Paneli
-                                    <a href="https://keenthemes.com" class="m-link">
+                                    <a href="https://goradesignstudio.com" class="m-link">
                                         Yadigar Berkay Zengin
                                     </a>
                                 </span>

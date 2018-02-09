@@ -15,6 +15,7 @@
                 }
             });
         </script>
+        <script src="<?php echo $base ?>js/jquery.js"></script>
         <link href="<?php echo $base ?>css/vendors.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo $base ?>css/style.bundle.css" rel="stylesheet" type="text/css" />
         <!--<link rel="shortcut icon" href="assets/demo/demo6/media/img/logo/favicon.ico" />-->

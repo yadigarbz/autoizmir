@@ -6,12 +6,12 @@
             <?php foreach ($carsb as $item) { ?>
             <div>
                 <div class="b-featured__item wow rotateIn" data-wow-delay="0.3s" data-wow-offset="150">
-                    <a href="<?php echo $base."arabalar/detay/".$item["id"]; ?>" style="overflow: hidden;">
-                        <img style="width:100%;margin-top:0;" src="<?php echo $base."images/cars/".$item["photo"]; ?>" alt="<?php echo $item["title"] ?>" />
+                    <a href="<?php echo $base."arabalar/detay/".$item["id"]; ?>" style="overflow: hidden;max-height:140px; margin-bottom:0">
+                        <img style="transform: translateX(-9%) translateY(-6%);max-width:120%;margin-top:0;" src="<?php echo $base."images/cars/".$item["photo"]; ?>" alt="<?php echo $item["title"] ?>" />
                         <?php if($item["pay"] > 0) { ?><span class="m-premium advantage" style="right:0">₺ <?php echo $item["pay"] ?> Peşinatla</span><?php } ?>
-                        <?php if($item["credit"]) { ?><span class="m-premium price">KREDİ FIRSATIYLA</span><?php } ?>
+                        <?php if($item["credit"]) { ?><span style="right:0" class="m-premium price">KREDİ FIRSATIYLA</span><?php } ?>
                     </a>
-                    <div class="b-featured__item-price">
+                    <div class="b-featured__item-price" style="margin-left:0;">
                         ₺ <?php echo $item["price"] ?>
                     </div>
                     <div class="clearfix"></div>
